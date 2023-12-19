@@ -2,10 +2,12 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpR
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
+from django.views.decorators.csrf import csrf_exempt
+
 
 from .forms import OrderForm
 from .models import Order, OrderLineItem
-from products.models import Product
+from products.models import Coupon, Product
 from profiles.forms import UserProfileForm
 from profiles.models import UserProfile
 from bag.contexts import bag_contents
@@ -126,6 +128,7 @@ def checkout(request):
             Did you forget to set it in your environment?')
 
     template = 'checkout/checkout.html'
+
     context = {
         'order_form': order_form,
         'stripe_public_key': stripe_public_key,
@@ -135,12 +138,79 @@ def checkout(request):
     return render(request, template, context)
 
 
+def apply_coupon(request):
+    if request.method == "POST":
+        code = request.POST.get("code")
+        coupon_object = Coupon.objects.filter(code=code, active=True).first()
+        if coupon_object:
+            request.session["coupon"] = coupon_object.discount
+            request.session.save()
+            messages.success(request, 'Coupon found and activated.')
+        else:
+            request.session["coupon"] = 0
+            request.session.save()
+            messages.error(request, 'Coupon not found.')
+
+    return redirect(reverse('view_bag'))
+
+
+def delete_coupon(request):
+    if "coupon" in request.session:
+        request.session["coupon"] = 0
+        request.session.save()
+        messages.success(request, 'Coupon Removed From Cart.')
+
+    return redirect(reverse('view_bag'))
+
+@csrf_exempt
+def apply_next_day_delivery(request):
+    current_bag = bag_contents(request)
+    next_day_delivery_amount = current_bag['next_day_delivery_amount']
+    request.session["next_day_delivery_amount"] = next_day_delivery_amount
+    request.session["next_day_delivery_status"] = 'checked'
+    request.session.save()
+    messages.success(request, 'Next day delivery applied')
+    return redirect(reverse('view_bag'))
+
+def delete_next_day_delivery(request):
+    request.session["next_day_delivery_amount"] = 0
+    request.session["next_day_delivery_status"] = 'unchecked'
+    request.session.save()
+    messages.success(request, 'Next day delivery removed')
+    return redirect(reverse('view_bag'))
+
+
 def checkout_success(request, order_number):
     """
     Handle successful checkouts
     """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
+
+    if "coupon" in request.session:
+        coupon = request.session.get("coupon")
+    else:
+        coupon = 0
+
+    if "next_day_delivery_status" in request.session and "next_day_delivery_amount" in request.session:
+        next_day_delivery_status = request.session.get("next_day_delivery_status")
+        next_day_delivery_amount = request.session.get("next_day_delivery_amount")
+
+    else:
+        next_day_delivery_status = 'unchecked'
+        next_day_delivery_amount = 0
+
+    order.grand_total -= coupon
+    order.grand_total -= next_day_delivery_amount
+    order.save() 
+
+    if "coupon" in request.session:
+        request.session["coupon"] = 0
+    
+    if "next_day_delivery_status" in request.session and "next_day_delivery_amount" in request.session:
+        request.session["next_day_delivery_amount"] = 0
+        request.session["next_day_delivery_status"] = 'unchecked'
+
 
     profile = UserProfile.objects.get(user=request.user)
     # Attach the user's profile to the order
