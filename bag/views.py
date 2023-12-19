@@ -87,6 +87,13 @@ def remove_from_bag(request, item_id):
 
         if size:
             del bag[item_id]['items_by_size'][size]
+            if "coupon" in request.session:
+                request.session["coupon"] = 0
+            
+            if "next_day_delivery_status" in request.session and "next_day_delivery_amount" in request.session:
+                request.session["next_day_delivery_amount"] = 0
+                request.session["next_day_delivery_status"] = 'unchecked'
+
             if not bag[item_id]['items_by_size']:
                 bag.pop(item_id)
             messages.success(request, f'Removed size {size.upper()} {product.name} from your bag')
