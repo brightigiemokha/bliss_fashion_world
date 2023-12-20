@@ -26,6 +26,7 @@ SECRET_KEY = 'p@ei#69*b*zz3u4yie-$()@cy^l(+x9&@6ypx+r0lm(3%_9hr7'
 DEBUG = True
 
 ALLOWED_HOSTS = ['8000-brightigiem-blissfashio-357fzw3114u.ws-eu107.gitpod.io']
+CSRF_TRUSTED_ORIGINS = ['https://8000-brightigiem-blissfashio-357fzw3114u.ws-eu107.gitpod.io', ]
 
 
 # Application definition
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.facebook',
     'home',
     'products',
     'bag',
@@ -57,8 +59,8 @@ INSTALLED_APPS = [
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
         'APP': {
-            'client_id': '<client-id-here>.apps.googleusercontent.com',
-            'secret': '<client-secret-here>',
+            'client_id': '140729287665-np0tidolq2d348gmm20k0bup6o0ok22o.apps.googleusercontent.com.apps.googleusercontent.com',
+            'secret': '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',
             'key': ''
         },
         'SCOPE': [
