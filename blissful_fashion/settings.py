@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
-    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.facebook', # For facebook
     'home',
     'products',
     'bag',
@@ -57,11 +57,34 @@ INSTALLED_APPS = [
 
 
 SOCIALACCOUNT_PROVIDERS = {
+    # facebook login setup.
+    'facebook': {
+        'METHOD': 'oauth2',
+        'SCOPE': ['email', 'public_profile'],
+        'AUTH_PARAMS': {'auth_type': 'reauthenticate'},
+        'INIT_PARAMS': {'cookie': True},
+        'FIELDS': [
+            'id',
+            'first_name',
+            'last_name',
+            'middle_name',
+            'name',
+            'name_format',
+            'picture',
+            'short_name',
+        ],
+        'EXCHANGE_TOKEN': True,
+        'LOCALE_FUNC': lambda request: 'en_US',
+        'VERIFIED_EMAIL': False,
+        'VERSION': 'v13.0',
+        'GRAPH_API_URL': 'https://graph.facebook.com/v13.0'
+    },
+
     'google': {
         'APP': {
-            'client_id': '140729287665-np0tidolq2d348gmm20k0bup6o0ok22o.apps.googleusercontent.com.apps.googleusercontent.com',
-            'secret': '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',
-            'key': ''
+            'client_id': '989837863613-656vfjbbo91j1ebjdbod9tqsjlhlrork.apps.googleusercontent.com',
+            'secret': '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',
+            'key': 'AIzaSyC93ekMzjDD21fWsYW-90aMh3jS3k0jF4s'
         },
         'SCOPE': [
             'profile',
