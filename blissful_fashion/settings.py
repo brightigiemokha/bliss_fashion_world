@@ -42,8 +42,9 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.google', # For google
     'allauth.socialaccount.providers.facebook', # For facebook
+    'allauth.socialaccount.providers.github', # For github
     'home',
     'products',
     'bag',
@@ -59,41 +60,35 @@ INSTALLED_APPS = [
 SOCIALACCOUNT_PROVIDERS = {
     # facebook login setup.
     'facebook': {
-        'METHOD': 'oauth2',
-        'SCOPE': ['email', 'public_profile'],
-        'AUTH_PARAMS': {'auth_type': 'reauthenticate'},
-        'INIT_PARAMS': {'cookie': True},
-        'FIELDS': [
-            'id',
-            'first_name',
-            'last_name',
-            'middle_name',
-            'name',
-            'name_format',
-            'picture',
-            'short_name',
+        'SCOPE': [
+            'profile',
+            'email'
         ],
-        'EXCHANGE_TOKEN': True,
-        'LOCALE_FUNC': lambda request: 'en_US',
-        'VERIFIED_EMAIL': False,
-        'VERSION': 'v13.0',
-        'GRAPH_API_URL': 'https://graph.facebook.com/v13.0'
+        'AUTH_PARAMS': {'access_type': 'online'}
     },
 
+    # google login setup.
     'google': {
+        'SCOPE': [
+            'profile',
+            'email'
+        ],
+        'AUTH_PARAMS': {'access_type': 'online'}
+    },
+          
+    # github login setup.
+    'github': {
         'APP': {
-            'client_id': '989837863613-656vfjbbo91j1ebjdbod9tqsjlhlrork.apps.googleusercontent.com',
-            'secret': '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',
-            'key': 'AIzaSyC93ekMzjDD21fWsYW-90aMh3jS3k0jF4s'
+            'client_id': 'fe37e5cd770929bacab0',
+            'secret': '235311f4fd280c462b8721bf682bdc8003a57e45',
+            'key': ''
         },
         'SCOPE': [
             'profile',
-            'email',
+            'email'
         ],
-        'AUTH_PARAMS': {
-            'access_type': 'online',
-        }
-    }
+        'AUTH_PARAMS': {'access_type': 'online'}
+    },
 }
 
 MIDDLEWARE = [
@@ -139,15 +134,15 @@ TEMPLATES = [
 ]
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
-AUTHENTICATION_BACKENDS = (
+AUTHENTICATION_BACKENDS = [
     # Needed to login by username in Django admin, regardless of `allauth`
     'django.contrib.auth.backends.ModelBackend',
 
     # `allauth` specific authentication methods, such as login by e-mail
     'allauth.account.auth_backends.AuthenticationBackend',
-)
+]
 
-SITE_ID = 1
+SITE_ID = 2
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
