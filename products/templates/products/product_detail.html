@@ -108,42 +108,50 @@
         </div>
     </div>
 </div>
-<div class="w-full mt-6">
-    <h2 class="text-xl">Customer's Reviews</h2>
-    <p class="mt-1 text-black-400">Rating: {{ products.get_rating }} </p>
+<div class="container mt-6">
 
-    {% if request.user.is_authenticated %}
-    <form method="post" action="." class="mt-6 mb-6 p-6 bg-gray-100 rounded-xl">
-        {% csrf_token %}
-        <div>
-            <label>Rating</label><br>
-            <select name="rating">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3" selected>3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-            </select>
-        </div>
-        <div>
-            <label>Comment</label><br>
-            <textarea name="content"></textarea>
-        </div>
-        <div>
-            <button>Submit</button>
-        </div>
-    </form>
-    {% endif %}
+    <div class="row" style="margin-bottom: 100px;">
+        <div class="col-lg-6">
+            <h2 class="text-xl">Write Reviews</h2>
+            <p class="mt-1 text-black-400">Rating: {{ products.get_rating }} </p>
 
-    {% for review in product.reviews.all %}
-    <div class="px-4 py-6 bg-gray-100 rounded-xl mb-4">
-        <strong>Rating: </strong> {{ review.rating }}/6<br>
-        <strong>Date: </strong> {{ review.created_at|date:"d-m-Y" }}/6<br>
-        <strong>Comment:</strong><br>
-        {{ review.content }}
+            {% if request.user.is_authenticated %}
+            <form method="POST" action="" class="mt-6 mb-6 p-6 bg-gray-100 rounded-xl formr-control">
+                {% csrf_token %}
+                <div>
+
+                    <select name="rating" class="custom-select custom-select-lg mb-3">
+                        <option value="1" selected>1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Comment</label><br>
+                    <textarea class="form-control" name="content"></textarea>
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-success mt-3">Submit</button>
+                </div>
+            </form>
+            {% endif %}
+        </div>
+        <div class="col-lg-6">
+            <h2 class="text-xl mb-5 ">Customer's Reviews</h2>
+
+            {% for review in product.reviews.all %}
+            <div class="px-4 py-6 bg-gray-100 rounded-xl mb-4 border p-4 shadow">
+                <strong>Rating: </strong> {{ review.rating }}/6<br>
+                <strong>Date: </strong> {{ review.created_at|date:"d-m-Y" }}/6<br>
+                <strong>Comment:</strong>{{ review.content }}
+            </div>
+
+            {% endfor %}
+        </div>
     </div>
-    {% endfor %}
 </div>
 
 {% endblock %}

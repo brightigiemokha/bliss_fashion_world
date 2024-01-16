@@ -9,6 +9,7 @@ def bag_contents(request):
     total = 0
     product_count = 0
     bag = request.session.get('bag', {})
+    next_day_delivery_amount_constant = 15
 
     for item_id, item_data in bag.items():
         if isinstance(item_data, int):
@@ -39,7 +40,25 @@ def bag_contents(request):
         delivery = 0
         free_delivery_delta = 0
     
-    grand_total = delivery + total
+    if "coupon" in request.session:
+        coupon = request.session.get("coupon")
+        initial_total = delivery + total
+        grand_total = initial_total - coupon
+    else:
+        coupon = 0
+        grand_total = delivery + total
+
+    if "next_day_delivery_status" in request.session and "next_day_delivery_amount" in request.session:
+        next_day_delivery_status = request.session.get("next_day_delivery_status")
+        next_day_delivery_amount = request.session.get("next_day_delivery_amount")
+        initial_total = delivery + total
+        grand_total = initial_total - next_day_delivery_amount
+
+    else:
+        next_day_delivery_status = 'unchecked'
+        next_day_delivery_amount = 0
+        grand_total = delivery + total
+
     
     context = {
         'bag_items': bag_items,
@@ -48,7 +67,10 @@ def bag_contents(request):
         'delivery': delivery,
         'free_delivery_delta': free_delivery_delta,
         'free_delivery_threshold': settings.FREE_DELIVERY_THRESHOLD,
-        'grand_total': grand_total,
+        'grand_total': grand_total - coupon,
+        'coupon':coupon,
+        'next_day_delivery_amount': next_day_delivery_amount_constant, # note: make this data dynamic, maybe calculate the next day delivery amount based on percentage and the number of items in cart 
+        'next_day_delivery_status':next_day_delivery_status,
     }
 
     return context

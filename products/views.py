@@ -64,6 +64,32 @@ def product_detail(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
 
+    if request.method == "POST":
+        rating = request.POST.get('rating')
+        content = request.POST.get('content')
+
+        print("rating ====", rating)
+        print("content ====", content)
+
+
+        reviews = Review.objects.filter(created_by=request.user, Product=product)
+        if reviews:
+            review = reviews.first()
+            review.rating = rating
+            review.content = content
+            review.save()
+            messages.success(request, "Review re-saved")
+        else:
+            review = Review.objects.create(
+                rating=rating,
+                content=content,
+                created_by=request.user,
+                product=product
+            )
+            messages.success(request, "Review created successfully")
+        
+        return redirect(reverse('product_detail', args=[product.id]))
+
     context = {
         'product': product,
     }
@@ -143,25 +169,39 @@ def product(request, slug):
     """ customer review """
     product = get_object_or_404(Product, slug=slug)
 
-    if request.method == 'POST':
-        rating = request.POST.get('rating', 3)
-        content = request.POST.get('content', '')
+    
 
-        if content:
-            reviews = Review.objects.filter(created_by=request.user, product=product)
-
-            if reviews.count() > 0:
-                review = reviews.first()
-                review.rating = rating
-                review.content = contentreview.save()
-            else:   
-                review = Review.objects.create(
-                    rating=rating,
-                    content=content,
-                    created_by=request.user
-                )
-
-            return redirect('products', slug=slug)
-        
+            
     return render(request, 'products/products.html', {'products': product})
 
+
+def create_review(request, id):
+    rating = request.POST.get('rating')
+    content = request.POST.get('content')
+    product = Product.objects.get(id=id)
+
+    print("rating ====", rating)
+    print("content ====", content)
+
+
+    reviews = Review.objects.filter(created_by=request.user, Product=product)
+
+    if reviews.exists():
+        review = reviews.first()
+        review.rating = rating
+        review.content = content
+        review.save()
+        messages.success(request, "Review re-saved")
+    else:
+        review = Review.objects.create(
+            rating=rating,
+            content=content,
+            created_by=request.user,
+            product=product
+        )
+        messages.success(request, "Review created successfully")
+
+
+    return redirect('product_detail', id=id)
+
+    
