@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -23,10 +24,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'p@ei#69*b*zz3u4yie-$()@cy^l(+x9&@6ypx+r0lm(3%_9hr7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = ['8000-brightigiem-blissfashio-642wjtc6xfy.ws-eu107.gitpod.io']
-CSRF_TRUSTED_ORIGINS = ['https://8000-brightigiem-blissfashio-357fzw3114u.ws-eu107.gitpod.io', ]
+CSRF_TRUSTED_ORIGINS = ['https://8000-brightigiem-blissfashio-642wjtc6xfy.ws-eu107.gitpod.io', ]
 
 
 # Application definition
@@ -80,15 +81,10 @@ SOCIALACCOUNT_PROVIDERS = {
     'github': {
         'APP': {
             'client_id': 'fe37e5cd770929bacab0',
-            'secret': '235311f4fd280c462b8721bf682bdc8003a57e45',
+            'secret': 'b269319dbfa9163609534e81d7061b3e16e16a17',
             'key': ''
         },
-        'SCOPE': [
-            'profile',
-            'email'
-        ],
-        'AUTH_PARAMS': {'access_type': 'online'}
-    },
+    }
 }
 
 MIDDLEWARE = [
@@ -134,6 +130,7 @@ TEMPLATES = [
 ]
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
+
 AUTHENTICATION_BACKENDS = [
     # Needed to login by username in Django admin, regardless of `allauth`
     'django.contrib.auth.backends.ModelBackend',
@@ -142,7 +139,7 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
-SITE_ID = 2
+SITE_ID = 3
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
@@ -160,12 +157,17 @@ WSGI_APPLICATION = 'blissful_fashion.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
 
 
 # Password validation
