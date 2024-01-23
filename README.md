@@ -1,110 +1,124 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Quiz App
 
-Welcome brightigiemokha,
+Quiz app is a beautiful interactive and informative game for user's who would love to have fun and learn as the same time. game has a beautiful background and can be played on any device and its give score of how far a user have gone and deplay background colors based on the answer provided. 
+you can't get bored playing this game.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+![Responsice Mockup](./assets/image/mainp.png)
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+## Features 
 
-## Gitpod Reminders
+Quiz app have 10 questions with 4 options and 1 correct answer for each questions, when you pick the correct question and click the submit , you could click the refresh button to start a fresh section
+### Existing Features
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+- __Quiz App Score's__
 
-`python3 -m http.server`
+  - This section is where the score of the player is displayed it have the number of questions answered correctly and the number of game played in total.
 
-A blue button should appear to click: _Make Public_,
+  ![scores](./assets/image/scores.png)
 
-Another blue button should appear to click: _Open Browser_.
+ 
+- __The Game Area__
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+  - This is the questions area with a pecfect border to make the play area more attractive and separate from other sections. it has black texts and 4 options for ezch questions. 
 
-A blue button should appear to click: _Make Public_,
+ ![play](./assets/image/playsection.png)
 
-Another blue button should appear to click: _Open Browser_.
+- __Correct Answer__
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+  - During the game when you pass the right answer you will get the a green background as a confirmation that you have passed that section.
 
-To log into the Heroku toolbelt CLI:
+![Question](./assets/image/passed.png)
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+- __Failed Scored__
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+  - During the game when the user picked the wrong answer you will get the a green background as a confirmation that you have passed that section.
 
-------
+![score](./assets/image/failed.png)
 
-## Release History
+For some/all of your features, you may choose to reference the specific project files that implement them.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
 
-**September 20 2023:** Update Python version to 3.9.17.
+- __Completely Responsive__
+  - site is completely responsive and can be played on any device of the user's choice/choosen.
+![mobile](./assets/image/responsive1.png)
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+## Testing 
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+Site was tested to sure it run perfectly well. first it was tested for multiple score on 1 same questions. during the test i tried to answer 1 questions twice to see if it will add to the score but it didnt which is perfectly as intended. the submit and background color was tested to see if we can get the required background when i picked the right answer and wrong answer. it showed green backgound for correct answer and red background for wrong answer as intended.
+the scores added one each time a correct answer was picked and no score was added when wrong choice was picked
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+site is completely responsive and can be played on any Browser / device of the user's choice/choosen..
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+### Validator Testing 
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+- HTML
+    - No errors were returned when passing through the official [W3C validator](https://validator.w3.org/nu/#textarea)
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+    ![html](./assets/image/htmlvalidate.png)
+    
+- CSS
+    - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator)
+    ![js](./assets/image/cssValidator.png)
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+- JavaScript
+    - No errors were found when passing through the official [Jshint validator](https://jshint.com/)
+    two functions appear un-used, these functions are being called from the index.html, so that is why the appear as the  unused variables in the validator.
+      - The following metrics were returned: 
+      - Function with the largest signature take 1 arguments, while the median is 1
+      - There are 3 functions in this file.
+      - Function with the largest signature takes 2 arguments, while the median is 0.
+      - Largest function has 16 statements in it, while the median is 8.
+      - The most complex function has a cyclomatic complexity value of 7 while the median is 4.
+      - 
+      ![js](./assets/image/jsval.png)
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+### 404 error page
+![lresponsive](./assets/image/responlight.png)
+on this site i have added an error page for the user and included information to redirect the user to the site incase they have made a mistake on their search for this site.
+404 error page have a link redirecting the user to the game.
+![404 page](./assets/image/404page.png)
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+  There are no unfixed Bugs.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+### Unfixed Bugs
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+  There are no unfixed Bugs.
 
-------
+### LightHouse
+  I have checked the site on Lighthouse to see the level of responsiveness and performance. on the desktop check Accessibility was 81% due to the color fitted and i didnt have enough time to solve this issue. site appears and function perfectly and accesible 
+  ![lighthouse desktop](./assets/image/lightdesk.png)
+  also on mobile i had same issue due to same reason
+  ![lighthouse mobile](./assets/image/lightgame.png)
+  .
+  light house check for 404 page was perfect as accessibility was 92%.
+  ![404 page mobile](./assets/image/light404.png)
+  the result was also same on the lighthouse check for desktop version of the 404 page
+  ![404 page mobile](./assets/image/light404d.png)
 
-## FAQ about the uptime script
+## Deployment
 
-**Why have you added this script?**
+  - The site was deployed to GitHub pages. The steps to deploy are as follows: 
+  - In the GitHub repository, navigate to the Settings tab 
+  - From the source section drop-down menu, select the Master Branch
+  - Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment. 
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+The live link can be found here - https://brightigiemokha.github.io/Quiz-app.html/
 
-**How will this affect me?**
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+## Credits 
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+  special Thanks to Web Dev Simplified for his video that gave me the background to this project.[https://www.youtube.com/watch?v=riDzcEQbX6k]
+  to Darkcode for the 404page tutor [https://www.youtube.com/watch?v=wFXAjxpnD7c]
+  To Mr Tomislav_5p for always been there for all the questions and helping to make sure everything i needed was given. thanks to Mr/Mrs Marlos for their contribution to the success of this project advise and review.
+  To My wife and amazing daughter for giving me enough time to focus on my project and complete it.
+  To all code institute tuttor supports you are all so amazing. thanks for your patients and help
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
 
-**So….?**
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+## Note 
 
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+  This project is for educational purpose only.
