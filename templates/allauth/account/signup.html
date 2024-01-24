@@ -6,29 +6,175 @@
     {% trans "Signup" %}
 {% endblock head_title %}
 {% block content %}
-    {% element h1 %}
-    <h1 style="margin-top: 200px; margin-left: 20px;">{% trans "Sign Up" %}</h1>
-    {% endelement %}
-    <p>
-        {% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}
-    </p>
-    {% url 'account_signup' as action_url %}
-    {% element form form=form method="post" action=action_url tags="entrance,signup" %}
-        {% slot body %}
-            {% csrf_token %}
-            {% element fields form=form unlabeled=True %}
-            {% endelement %}
-            {% if redirect_field_value %}
-                <input type="hidden"
-                       name="{{ redirect_field_name }}"
-                       value="{{ redirect_field_value }}" />
-            {% endif %}
-        {% endslot %}
-        {% slot actions %}
-            {% element button tags="prominent,signup" type="submit" %}
-                {% trans "Sign Up" %}
-            {% endelement %}
-        {% endslot %}
-    {% endelement %}
-    {% include "socialaccount/snippets/login.html" with page_layout="entrance" %}
-{% endblock content %}
+
+
+<style>
+    #id_password, #id_login{
+      border: none;
+      width: 100%;
+      margin-top: 20px;
+      outline: none;
+    }
+  
+   
+  
+  .login-box {
+      margin-top: 75px;
+      height: auto;
+      background: #1A2226;
+      text-align: center;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  }
+  
+  .login-key {
+      height: 100px;
+      font-size: 80px;
+      line-height: 100px;
+      background: -webkit-linear-gradient(#27EF9F, #0DB8DE);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+  }
+  
+  .login-title {
+      margin-top: 15px;
+      text-align: center;
+      font-size: 30px;
+      letter-spacing: 2px;
+      margin-top: 15px;
+      font-weight: bold;
+      color: #ECF0F5;
+  }
+  
+  .login-form {
+      margin-top: 25px;
+      text-align: left;
+  }
+  
+  #id_login {
+      background-color: #1A2226;
+      border: none;
+      border-bottom: 2px solid #0DB8DE;
+      border-top: 0px;
+      border-radius: 0px;
+      font-weight: bold;
+      outline: 0;
+      margin-bottom: 20px;
+      padding-left: 0px;
+      color: #ECF0F5;
+  }
+  
+  #id_password {
+      background-color: #1A2226;
+      border: none;
+      border-bottom: 2px solid #0DB8DE;
+      border-top: 0px;
+      border-radius: 0px;
+      font-weight: bold;
+      outline: 0;
+      padding-left: 0px;
+      margin-bottom: 20px;
+      color: #ECF0F5;
+  }
+  
+  .form-group {
+      margin-bottom: 40px;
+      outline: 0px;
+  }
+  
+  .form-control:focus {
+      border-color: inherit;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      border-bottom: 2px solid #0DB8DE;
+      outline: 0;
+      background-color: #1A2226;
+      color: #ECF0F5;
+  }
+  
+  input:focus {
+      outline: none;
+      box-shadow: 0 0 0;
+  }
+  
+  label {
+      margin-bottom: 0px;
+  }
+  
+  .form-control-label {
+      font-size: 10px;
+      color: #6C6C6C;
+      font-weight: bold;
+      letter-spacing: 1px;
+  }
+  
+  .btn-outline-primary {
+      border-color: #0DB8DE;
+      color: #0DB8DE;
+      border-radius: 0px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  }
+  
+  .btn-outline-primary:hover {
+      background-color: #0DB8DE;
+      right: 0px;
+  }
+  
+  .login-btm {
+      float: left;
+  }
+  
+  .login-button {
+      padding-right: 0px;
+      text-align: right;
+      margin-bottom: 25px;
+  }
+  
+  .login-text {
+      text-align: left;
+      padding-left: 0px;
+      color: #A2A4A4;
+  }
+  
+  .loginbttm {
+      padding: 0px;
+  }
+  </style>
+  
+
+<div class="container shaodw rounded-3 p-4" style="margin-top: 300px;">
+    <div class="container">
+      <div class="row">
+          <div class="col-lg-3 col-md-2"></div>
+          <div class="col-lg-6 col-md-8 login-box">
+              <div class="col-lg-12 login-title">Sign Up</div>
+              <p class="text-white">Welcome to blissful fashion, create a free account now.</p>
+              <a href="/accounts/github/login/?process=login" >
+                <img style="width: 30px;" src="https://static-00.iconduck.com/assets.00/github-icon-2048x1988-jzvzcf2t.png" class="mt-2" alt="">
+              </a>
+              <div class="col-lg-12 login-form">
+                  <div class="col-lg-12 login-form">
+                      
+                    <form method="post" action="{{ action_url }}" class="form">
+                        {# Add a class for styling #} {% csrf_token %} {% crispy form %} {# Render fields using crispy forms for cleaner HTML #} {% if redirect_field_value %}
+                        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                        {% endif %}
+                    
+                        <div class="col-lg-12 loginbttm">
+                            <div class="col-lg-6 login-btm login-text"></div>
+                            <div class="mb-4">
+                                <button type="submit" class="btn btn-outline-primary w-100 mb-4">SIGN UP <i class="fas fa-user-plus"></i></button>
+                                <a class="button secondaryAction text-center text-white mt-3 mb-4" href="{{ login_url }}">Already have an account? Login</a>
+                            </div>
+                        </div>
+                    </form>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-md-2"></div>
+          </div>
+      </div>
+  
+    </div>
+  </div>
+  {% endblock content %}

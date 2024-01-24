@@ -7,40 +7,184 @@
 
 {% block content %}
 
-<h1 style="margin-top: 200px;">{% trans "Sign In" %}</h1>
+<style>
+  #id_password, #id_login{
+    border: none;
+    width: 100%;
+    margin-top: 20px;
+    outline: none;
+  }
 
-{% get_providers as socialaccount_providers %}
 
-{% if socialaccount_providers %}
-<p>{% blocktrans with site.name as site_name %}Please sign in with one
-of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a>
-for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
 
-<div class="socialaccount_ballot">
+.login-box {
+    margin-top: 75px;
+    height: auto;
+    background: #1A2226;
+    text-align: center;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
 
-  <ul class="socialaccount_providers">
-    {% include "socialaccount/snippets/provider_list.html" with process="login" %}
-  </ul>
+.login-key {
+    height: 100px;
+    font-size: 80px;
+    line-height: 100px;
+    background: -webkit-linear-gradient(#27EF9F, #0DB8DE);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
-  <div class="login-or">{% trans 'or' %}</div>
+.login-title {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 30px;
+    letter-spacing: 2px;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #ECF0F5;
+}
 
+.login-form {
+    margin-top: 25px;
+    text-align: left;
+}
+
+#id_login {
+    background-color: #1A2226;
+    border: none;
+    border-bottom: 2px solid #0DB8DE;
+    border-top: 0px;
+    border-radius: 0px;
+    font-weight: bold;
+    outline: 0;
+    margin-bottom: 20px;
+    padding-left: 0px;
+    color: #ECF0F5;
+}
+
+#id_password {
+    background-color: #1A2226;
+    border: none;
+    border-bottom: 2px solid #0DB8DE;
+    border-top: 0px;
+    border-radius: 0px;
+    font-weight: bold;
+    outline: 0;
+    padding-left: 0px;
+    margin-bottom: 20px;
+    color: #ECF0F5;
+}
+
+.form-group {
+    margin-bottom: 40px;
+    outline: 0px;
+}
+
+.form-control:focus {
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-bottom: 2px solid #0DB8DE;
+    outline: 0;
+    background-color: #1A2226;
+    color: #ECF0F5;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 0;
+}
+
+label {
+    margin-bottom: 0px;
+}
+
+.form-control-label {
+    font-size: 10px;
+    color: #6C6C6C;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.btn-outline-primary {
+    border-color: #0DB8DE;
+    color: #0DB8DE;
+    border-radius: 0px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.btn-outline-primary:hover {
+    background-color: #0DB8DE;
+    right: 0px;
+}
+
+.login-btm {
+    float: left;
+}
+
+.login-button {
+    padding-right: 0px;
+    text-align: right;
+    margin-bottom: 25px;
+}
+
+.login-text {
+    text-align: left;
+    padding-left: 0px;
+    color: #A2A4A4;
+}
+
+.loginbttm {
+    padding: 0px;
+}
+</style>
+
+<div class="container shaodw rounded-3 p-4" style="margin-top: 300px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-md-2"></div>
+      <div class="col-lg-6 col-md-8 login-box">
+        <div class="col-lg-12 login-title">Sign In</div>
+        <a href="/accounts/github/login/?process=login">
+          <img style="width: 30px;" src="https://static-00.iconduck.com/assets.00/github-icon-2048x1988-jzvzcf2t.png"
+            class="mt-2" alt="">
+        </a>
+        <div class="col-lg-12 login-form">
+          <div class="col-lg-12 login-form">
+            <form method="POST" action="{% url 'account_login' %}">
+              <div class="form-group">
+                <label class="form-control-label">Username Or Email</label> <br>
+                {{form.login}}
+              </div>
+              <div class="form-group">
+                <label class="form-control-label">Password</label> <br>
+                {{form.password}}
+
+              </div>
+
+              <div class="col-lg-12 loginbttm">
+                <div class="col-lg-6 login-btm login-text">
+                  <!-- Error Message -->
+                </div>
+                <div class="mb-4">
+                  <button type="submit" class="btn btn-outline-primary w-100 mb-4">LOGIN <i
+                      class="fas fa-sign-in-alt"></i></button>
+                  <a class="button secondaryAction text-center text-white mt-3 mb-4"
+                    href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a> <br>
+                  <a class="button secondaryAction text-center text-white mt-3 mb-4" href="{{ signup_url }}">Don't have
+                    an account? Register Now</a>
+
+                </div>
+
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-2"></div>
+      </div>
+    </div>
+  </div>
 </div>
-
-{% include "socialaccount/snippets/login_extra.html" %}
-
-{% else %}
-<p>{% blocktrans %}If you have not created an account yet, then please
-<a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
-{% endif %}
-
-<form class="login" method="POST" action="{% url 'account_login' %}">
-  {% csrf_token %}
-  {{ form.as_p }}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %}
-  <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
-  <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
-</form>
-
 {% endblock %}
