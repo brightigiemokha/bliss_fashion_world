@@ -70,11 +70,6 @@ SOCIALACCOUNT_PROVIDERS = {
 
     # google login setup.
     'google': {
-        'APP': {
-            'client_id': '1036248710726-5ghh0u5ma9ocu4j45ug77j5oocr21l5c.apps.googleusercontent.com',
-            'secret': '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',
-            'key': ''
-        },
         'SCOPE': [
             'profile',
             'email'
