@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'p@ei#69*b*zz3u4yie-$()@cy^l(+x9&@6ypx+r0lm(3%_9hr7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEVELOPMENT' in os.environ
+DEBUG = 'DEVELOPMENT'  # in os.environ
 
 ALLOWED_HOSTS = ['8000-brightigiem-blissfashio-642wjtc6xfy.ws-eu107.gitpod.io']
 CSRF_TRUSTED_ORIGINS = ['https://8000-brightigiem-blissfashio-642wjtc6xfy.ws-eu107.gitpod.io', ]
@@ -212,6 +212,7 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # Stripe
 FREE_DELIVERY_THRESHOLD = 50
 STANDARD_DELIVERY_PERCENTAGE = 10
