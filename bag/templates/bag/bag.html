@@ -100,11 +100,25 @@
                         <td colspan="5" class="pt-5 text-right">
                             <h6><strong>Bag Total: ${{ total|floatformat:2 }}</strong></h6>
                             <h6>Delivery: ${{ delivery|floatformat:2 }}</h6>
+                            <form action="{% url 'apply_coupon' %}" method="POST">
+                                {% csrf_token %}
+                                <input placeholder="Enter Coupon Code" type="text" name="code" id="">
+                                <button type="submit" class="btn btn-success">Apply</button>
+                            </form>
+                            
+                            {% if coupon != 0 %}
+                                <a href="{% url 'delete_coupon' %}" class="text-danger mt-3"> <i class="fas fa-trash"></i> Remove ${{coupon}} Coupon</a>
+                            {% endif %}
+                                
                             <h4 class="mt-4"><strong>Grand Total: ${{ grand_total|floatformat:2 }}</strong></h4>
+                            <p class="mb-1 text-success fw-bold">
+                                Get your order delivered tomorrow for an extra ${{next_day_delivery_amount}} 
+                                <input type="checkbox" {{next_day_delivery_status}} class="checkbox" name="" id="next_day_delivery_checkbox">
+                            </p>
                             {% if free_delivery_delta > 0 %}
+                            <hr>
                             <p class="mb-1 text-danger">
-                                You could get free delivery by spending just <strong>${{ free_delivery_delta }}</strong>
-                                more!
+                                You could get free delivery by spending just <strong>${{ free_delivery_delta }}</strong>more!
                             </p>
                             {% endif %}
                         </td>
@@ -168,5 +182,81 @@
                 location.reload();
             });
     })
+
+
+
+    // Apply next day delivery
+    $(document).ready(function () {
+        // fxn to reload the page after chec box btn is clicked
+        function reloadPage() {
+            location.reload(true);  // Reloads the page
+        }
+
+        // Event hdl for checkbox click
+        $('#next_day_delivery_checkbox').on('change', function () {
+            if ($(this).is(':checked')) {
+                $.ajax({
+                    url: '/checkout/apply_next_day_delivery/',  
+                    method: 'GET',
+                    success: function (data) {
+                        console.log('AJAX call successful');
+                        reloadPage();
+                    },
+                    error: function (error) {
+                        console.error('AJAX call failed', error);
+                    }
+                });
+            } else {
+            }
+        });
+    });
+
+
+
+
+
+    $(document).ready(function () {
+        // Function to reload the page
+        function reloadPage() {
+            location.reload(true);  // Reloads the page
+        }
+
+        // Event handler for checkbox click
+        $('#next_day_delivery_checkbox').on('change', function () {
+            if ($(this).is(':checked')) {
+                // Checkbox is checked, make an AJAX call to your Django view URL
+                $.ajax({
+                    url: '/checkout/apply_next_day_delivery/',  
+                    method: 'GET',
+                    success: function (data) {
+                        // Handle success if needed
+                        console.log('AJAX call successful');
+                        // Reload the page after the AJAX call is successful
+                        reloadPage();
+                    },
+                    error: function (error) {
+                        // Handle error if needed
+                        console.error('AJAX call failed', error);
+                    }
+                });
+            } else {
+                // Checkbox is unchecked, make another AJAX call to the same Django view URL
+                $.ajax({
+                    url: '/checkout/delete_next_day_delivery/',  
+                    method: 'GET',
+                    success: function (data) {
+                        // Handle success if needed
+                        console.log('AJAX call successful');
+                        // Reload the page after the AJAX call is successful
+                        reloadPage();
+                    },
+                    error: function (error) {
+                        // Handle error if needed
+                        console.error('AJAX call failed', error);
+                    }
+                });
+            }
+        });
+    });
 </script>
 {% endblock %}
