@@ -57,9 +57,12 @@ def get_rating(self):
     return 0
 
 class Review(models.Model):
-    Product = models.ForeignKey(Product, related_name='reviews', on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, related_name='reviews', on_delete=models.CASCADE)
     rating = models.IntegerField(default=3)
     content = models.TextField()
     created_by = models.ForeignKey(User, related_name='reviews', on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f'Review: {self.product} - {self.created_by}'
 

@@ -72,7 +72,7 @@ def product_detail(request, product_id):
         print("content ====", content)
 
 
-        reviews = Review.objects.filter(created_by=request.user, Product=product)
+        reviews = Review.objects.filter(created_by=request.user, product=product)
         if reviews:
             review = reviews.first()
             review.rating = rating
