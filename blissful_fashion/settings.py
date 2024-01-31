@@ -24,10 +24,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'p@ei#69*b*zz3u4yie-$()@cy^l(+x9&@6ypx+r0lm(3%_9hr7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEVELOPMENT'  # in os.environ
+DEBUG = False  # in os.environ
 
-ALLOWED_HOSTS = ['blissful-fashion-a4f520905ea4.herokuapp.com']
-CSRF_TRUSTED_ORIGINS = ['https://blissful-fashion-a4f520905ea4.herokuapp.com', ]
+ALLOWED_HOSTS = ['8000-brightigiem-blissfashio-642wjtc6xfy.ws-eu107.gitpod.io,' '.herokuapp.com']
+CSRF_TRUSTED_ORIGINS = ['https://8000-brightigiem-blissfashio-642wjtc6xfy.ws-eu107.gitpod.io', ]
 
 
 # Application definition
@@ -158,13 +158,12 @@ WSGI_APPLICATION = 'blissful_fashion.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
- DATABASES = {
+DATABASES = {
      'default': {
          'ENGINE': 'django.db.backends.sqlite3',
          'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
      }
  }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
