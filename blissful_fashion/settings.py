@@ -27,7 +27,7 @@ SECRET_KEY = ('SECRET_KEY')
 DEBUG = 'DEVELOPMENT'  # in os.environ
 
 ALLOWED_HOSTS = ['blissful-fashion-a4f520905ea4.herokuapp.com']
-CSRF_TRUSTED_ORIGINS = ['https://8000-brightigiem-blissfashio-642wjtc6xfy.ws-eu107.gitpod.io', ]
+CSRF_TRUSTED_ORIGINS = ['https://blissful-fashion-a4f520905ea4.herokuapp.com', ]
 
 
 # Application definition
