@@ -52,7 +52,7 @@ def bag_contents(request):
         next_day_delivery_status = request.session.get("next_day_delivery_status")
         next_day_delivery_amount = request.session.get("next_day_delivery_amount")
         initial_total = delivery + total
-        grand_total = initial_total - next_day_delivery_amount
+        grand_total = initial_total + next_day_delivery_amount
 
     else:
         next_day_delivery_status = 'unchecked'
