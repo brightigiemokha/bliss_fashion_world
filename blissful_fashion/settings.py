@@ -24,10 +24,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'p@ei#69*b*zz3u4yie-$()@cy^l(+x9&@6ypx+r0lm(3%_9hr7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False  # in os.environ
+DEBUG = 'DEVELOPMENT'  # in os.environ
 
-ALLOWED_HOSTS = ['blissful-fashion-d0f7189d5d90.herokuapp.com/,' '.herokuapp.com']
-CSRF_TRUSTED_ORIGINS = ['https://blissful-fashion-d0f7189d5d90.herokuapp.com/', ]
+ALLOWED_HOSTS = ['blissful-fashion-a4f520905ea4.herokuapp.com']
+CSRF_TRUSTED_ORIGINS = ['https://blissful-fashion-a4f520905ea4.herokuapp.com', ]
 
 
 # Application definition
@@ -158,12 +158,18 @@ WSGI_APPLICATION = 'blissful_fashion.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-     'default': {
-         'ENGINE': 'django.db.backends.sqlite3',
-         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-     }
- }
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
