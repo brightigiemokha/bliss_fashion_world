@@ -224,6 +224,10 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 if 'USE_AWS' in os.environ:
+    #Cache control
+    AWS_S3_OBJECT_PARAMETERS = {
+        'Expires': 'max-age=94608000',
+    }
     # Bucket Config
     AWS_STORAGE_BUCKET_NAME = 'blissful-fashion'
     AWS_S3_REGION_NAME = 'eu-north-1'
