@@ -26,8 +26,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'm44c*a@722)v5gxr!$%fsyg@(@6uhvop&-f5$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' #in os.environ
 
-ALLOWED_HOSTS = ['8000-brightigiem-blissfashio-642wjtc6xfy.ws-eu107.gitpod.io']
-CSRF_TRUSTED_ORIGINS = ['https://8000-brightigiem-blissfashio-642wjtc6xfy.ws-eu107.gitpod.io', ]
+ALLOWED_HOSTS = ['blissful-fashion-a4f520905ea4.herokuapp.com', '8000-brightigiem-blissfashio-642wjtc6xfy.ws-eu107.gitpod.io']
+CSRF_TRUSTED_ORIGINS = ['https://blissful-fashion-a4f520905ea4.herokuapp.com', ]
 
 
 # Application definition
@@ -170,6 +170,16 @@ else:
         }
     }
 
+# # DATABASES = {
+# #      'default': dj_database_url.parse('postgres://eqplezvz:je1e87hi3om36vhU98MT1grkxQ7bSvx-@mahmud.db.elephantsql.com/eqplezvz')
+# #  }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
