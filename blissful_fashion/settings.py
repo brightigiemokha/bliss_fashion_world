@@ -24,10 +24,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEVELOPMENT' in os.environ
+DEBUG = True #'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['blissful-fashion-d0f7189d5d90.herokuapp.com', '8000-brightigiem-blissfashio-642wjtc6xfy.ws-eu107.gitpod.io']
-CSRF_TRUSTED_ORIGINS = ['https://blissful-fashion-d0f7189d5d90.herokuapp.com', ]
+ALLOWED_HOSTS = ['blissful-fashion-0cb729cb8dac.herokuapp.com/', '8000-brightigiem-blissfashio-642wjtc6xfy.ws-eu107.gitpod.io']
+CSRF_TRUSTED_ORIGINS = ['https://blissful-fashion-0cb729cb8dac.herokuapp.com/', ]
 
 
 # Application definition
@@ -163,16 +163,12 @@ WSGI_APPLICATION = 'blissful_fashion.wsgi.application'
 #         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
 #     }
 # else:
-#     DATABASES = {
-#         'default': {
-#             'ENGINE': 'django.db.backends.sqlite3',
-#             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#         }
-#     }
-
-DATABASES = {
-     'default': dj_database_url.parse('postgres://eqplezvz:je1e87hi3om36vhU98MT1grkxQ7bSvx-@mahmud.db.elephantsql.com/eqplezvz')
- }
+    # DATABASES = {
+    #     'default': {
+    #         'ENGINE': 'django.db.backends.sqlite3',
+    #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    #     }
+    # }
 
 # DATABASES = {
 #     'default': {
