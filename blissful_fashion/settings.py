@@ -26,8 +26,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'm44c*a@722)v5gxr!$%fsyg@(@6uhvop&-f5$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' #in os.environ
 
-ALLOWED_HOSTS = ['blissful-fashion-a4f520905ea4.herokuapp.com', '8000-brightigiem-blissfashio-642wjtc6xfy.ws-eu107.gitpod.io']
-CSRF_TRUSTED_ORIGINS = ['https://blissful-fashion-a4f520905ea4.herokuapp.com', ]
+ALLOWED_HOSTS = ['blissful-fashion-d0f7189d5d90.herokuapp.com', '8000-brightigiem-blissfashio-642wjtc6xfy.ws-eu107.gitpod.io']
+CSRF_TRUSTED_ORIGINS = ['https://blissful-fashion-d0f7189d5d90.herokuapp.com', ]
 
 
 # Application definition
