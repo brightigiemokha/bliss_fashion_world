@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = ['blissful-fashion-0cb729cb8dac.herokuapp.com/']
-CSRF_TRUSTED_ORIGINS = ['https://blissful-fashion-0cb729cb8dac.herokuapp.com/',]
+CSRF_TRUSTED_ORIGINS = ['https://blissful-fashion-0cb729cb8dac.herokuapp.com/']
 
 
 # Application definition
@@ -81,8 +81,8 @@ SOCIALACCOUNT_PROVIDERS = {
     # github login setup.
     'github': {
         'APP': {
-            'client_id': 'fe37e5cd770929bacab0',
-            'secret': 'b269319dbfa9163609534e81d7061b3e16e16a17',
+            'GIT-CLIENT-ID': os.environ.get('GIT-CLIENT-ID'),
+            'GIT-CLIENT-SECRET': os.environ.get('GIT-CLIENT-SECRET'),
             'key': ''
         },
     }
