@@ -78,14 +78,14 @@ SOCIALACCOUNT_PROVIDERS = {
         'AUTH_PARAMS': {'access_type': 'online'}
     },
           
-    # # github login setup.
-    # 'github': {
-    #     'APP': {
-    #         'GIT-CLIENT-ID': os.environ.get('GIT-CLIENT-ID'),
-    #         'GIT-CLIENT-SECRET': os.environ.get('GIT-CLIENT-SECRET'),
-    #         'key': ''
-    #     },
-    # }
+    # github login setup.
+    'github': {
+        'APP': {
+            'GIT-CLIENT-ID': os.environ.get('GIT-CLIENT-ID'),
+            'GIT-CLIENT-SECRET': os.environ.get('GIT-CLIENT-SECRET'),
+            'key': ''
+        },
+    }
 }
 
 MIDDLEWARE = [
@@ -140,7 +140,7 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
-SITE_ID = 3
+SITE_ID = 4
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
