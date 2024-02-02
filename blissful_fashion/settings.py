@@ -80,11 +80,11 @@ SOCIALACCOUNT_PROVIDERS = {
           
     # github login setup.
     'github': {
-        'APP': {
-            'GIT-CLIENT-ID': os.environ.get('GIT-CLIENT-ID'),
-            'GIT-CLIENT-SECRET': os.environ.get('GIT-CLIENT-SECRET'),
-            'key': ''
-        },
+        # 'APP': {
+        #     'client_id': os.environ.get('GITHUB_CLIENT_ID'),
+        #     'secret': os.environ.get('GITHUB_SECRET_ID'),
+        #     'key': ''
+        # },
     }
 }
 
