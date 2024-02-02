@@ -21,13 +21,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY', '')
+SECRET_KEY = '825#5-_y^72**b4@s+_v5zg686-(a#*mei1@5=%+t*voda3hpf'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True #'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = ['blissful-fashion-0cb729cb8dac.herokuapp.com', '8000-brightigiem-blissfashio-642wjtc6xfy.ws-eu107.gitpod.io']
-CSRF_TRUSTED_ORIGINS = ['https://blissful-fashion-0cb729cb8dac.herokuapp.com/']
+CSRF_TRUSTED_ORIGINS = ['https://blissful-fashion-0cb729cb8dac.herokuapp.com', 'https://8000-brightigiem-blissfashio-642wjtc6xfy.ws-eu107.gitpod.io']
 SECURE_CROSS_ORIGIN_OPENER_POLICY='same-origin-allow-popups'
 
 # Application definition
@@ -78,14 +78,14 @@ SOCIALACCOUNT_PROVIDERS = {
         'AUTH_PARAMS': {'access_type': 'online'}
     },
           
-    # github login setup.
-    'github': {
-        'APP': {
-            'GIT-CLIENT-ID': os.environ.get('GIT-CLIENT-ID'),
-            'GIT-CLIENT-SECRET': os.environ.get('GIT-CLIENT-SECRET'),
-            'key': ''
-        },
-    }
+    # # github login setup.
+    # 'github': {
+    #     'APP': {
+    #         'GIT-CLIENT-ID': os.environ.get('GIT-CLIENT-ID'),
+    #         'GIT-CLIENT-SECRET': os.environ.get('GIT-CLIENT-SECRET'),
+    #         'key': ''
+    #     },
+    # }
 }
 
 MIDDLEWARE = [
