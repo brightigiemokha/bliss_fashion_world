@@ -8,6 +8,9 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Blissful fashion Store is an E-commerce shop for online shopping for household items">
+        <meta name="keywords" content="HTML, CSS, JavaScript, Django">
+        <meta name="author" content="Bright Anyiador">
     {% endblock %}
 
     {% block extra_meta %}
@@ -35,20 +38,20 @@
     {% block extra_js %}
     {% endblock %}
 
-    <title>Boutique Ado {% block extra_title %}{% endblock %}</title>
+    <title>Blissful Fashion Store {% block extra_title %}{% endblock %}</title>
   </head>
   <body>
     <header class="container-fluid fixed-top">
         <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                 <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                    <h2 class="logo-font text-black my-0"><strong>BlissFul</strong> Fashion</h2>
+                    <h2 class="logo-font text-black my-0"><strong>BlissFul Fashion</strong> </h2>
                 </a>
             </div>
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <form method="GET" action="{% url 'products' %}">
                     <div class="input-group w-100">
-                        <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
+                        <input class="form-control border border-black rounded-0" type="text" aria-label="q" placeholder="Search our site">
                         <div class="input-group-append">
                             <button class="form-control btn btn-black border border-black rounded-0" type="submit">
                                 <span class="icon">
@@ -109,7 +112,7 @@
         </div>
         <div id="delivery-banner" class="row text-center">
             <div class="col bg-black text-white">
-                <marquee behavior="" direction=""><h4 class="logo-font my-1">Free delivery on orders over ${{ free_delivery_threshold }}! </h4></marquee>               
+                <marquee behavior="" direction=""><h3 class="logo-font my-1">Free delivery on orders over ${{ free_delivery_threshold }}! </h3></marquee>               
             </div>            
         </div>
     </header>

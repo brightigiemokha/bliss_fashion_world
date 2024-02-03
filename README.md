@@ -1,33 +1,69 @@
-# Quiz App
+# Blissful Fashion Store
 
-Quiz app is a beautiful interactive and informative game for user's who would love to have fun and learn as the same time. game has a beautiful background and can be played on any device and its give score of how far a user have gone and deplay background colors based on the answer provided. 
-you can't get bored playing this game.
+Blissful Fashion Store is an E-commerce site for shoppers who would love to go online and get items for their homes. the site is very secure with a secure payment system from stripe. this site offer users with great benefits and users are able to get their orders delivered to them on a next day delivery system all over Europe and UK.
+this is a easy to use site that have image of products and quantity needed can be selected by customer and placed in a basket until customer is done with shopping then can go to cart to see abd pay for item selected. 
+in the basket customers can chose to reduce the quantity of items they have previously selected and can also add to the quantity before making a payment. details of deliver address and names are require to complete the transactions.
+some of the benefits giving to customers are: 
+1. customers wouldn't be charged for delivery of times above the amount......
+2. there is a coupon offer for regular shopper / customers who have made a large order. such coupon are forworded to their email as a thank you gesture
+3. customers can login / register easily using their google or github accounts .
+
 
 ![Responsice Mockup](./assets/image/mainp.png)
 
 ## Features 
 
-Quiz app have 10 questions with 4 options and 1 correct answer for each questions, when you pick the correct question and click the submit , you could click the refresh button to start a fresh section
+Blissful Fashion Store has offers on sales for customers who would enjoy to shop at a cheaper rate for more valuable items,
+Blissful Fashion Store has next day delivery features for customers who would love to get their item faster
+Blissful Fashion Store has coupon gifts for customer to help reduce the cost on their shopping
+Blissful Fashion Store has a large rage of products from cloths to hardware making it convienent to shop in one place
+Blissful Fashion Store has a secure payment system for all cards payment
+Blissful Fashion Store has customer review section to help the store understand what they think about the products
+Blissful Fashion Store has a great navigation option for customers as they can select between products they would like to view.
+Blissful Fashion Store has a search option for customers to be able to search what they would like to purchase easily
+Blissful Fashion Store made it easy for non registered shoppers can still shop without any issues
+Blissful Fashion Store has the option for customers to login / register easily using their social media accounts, google and github
 ### Existing Features
 
-- __Quiz App Score's__
+- __front page view__
 
-  - This section is where the score of the player is displayed it have the number of questions answered correctly and the number of game played in total.
+  - this is the main / front page of the site . it welcomes choppers to the site with information of sales available to them. here a shopper can decide to go shopping by clicking on the shop now to open the door to an amazing world of items for shopping.
+  - the page have search bar at the top which will give customers the opportunity to search for what they would want to buy directly.
+  - this page also have the user login / registration link for customers who already have an account or would love to have an account.
+  - this page have carts where customer can see what they have kept on the cart and total cost.
+  - this page have links to the products, special offers, hardwares and cloths .
+  links are all responsive and user can click on the store name to get to this page at any time.
 
-  ![scores](./assets/image/scores.png)
+
+
+  ![Front page](./assets/image/scores.png)
 
  
-- __The Game Area__
+- __Products Page__
 
-  - This is the questions area with a pecfect border to make the play area more attractive and separate from other sections. it has black texts and 4 options for ezch questions. 
+  - this page display all products available in the store , customers can scroll through the list of times and clich on them if they want to get some more discribtions
+  - All items can be clicked to deplay items details and quantitie selected before adding to carts
+  - Hardware Page displays hardwares like tolls for kids and other kitchen hardwares like pots
 
- ![play](./assets/image/playsection.png)
+ ![Products page](./assets/image/playsection.png)
 
-- __Correct Answer__
+- __Special Offers Page__
 
-  - During the game when you pass the right answer you will get the a green background as a confirmation that you have passed that section.
+  - Special Offers Page displays items on offers , these are discounted products due to age or seasons but till at good qualitys
 
-![Question](./assets/image/passed.png)
+![Special Offers Page](./assets/image/passed.png)
+
+- __Hardware Page__
+
+  - Hardware Page displays hardwares like tolls for kids and other kitchen hardwares like pots
+
+![Hardware Page](./assets/image/passed.png)
+
+- __Cloths Page__
+
+  - Cloths Page displays cloths for both male and female, boys and girls including babies.
+
+![Cloths Page](./assets/image/passed.png)
 
 - __Failed Scored__
 
