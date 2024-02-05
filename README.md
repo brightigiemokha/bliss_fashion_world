@@ -18,31 +18,7 @@
   ![Front page](./assets/image/scores.png)
 
  
-- __Products Page__
 
-  - this page display all products available in the store , customers can scroll through the list of times and clich on them if they want to get some more discribtions
-  - All items can be clicked to deplay items details and quantitie selected before adding to carts
-  - Hardware Page displays hardwares like tolls for kids and other kitchen hardwares like pots
-
- ![Products page](./assets/image/playsection.png)
-
-- __Special Offers Page__
-
-  - Special Offers Page displays items on offers , these are discounted products due to age or seasons but till at good qualitys
-
-![Special Offers Page](./assets/image/passed.png)
-
-- __Hardware Page__
-
-  - Hardware Page displays hardwares like tolls for kids and other kitchen hardwares like pots
-
-![Hardware Page](./assets/image/passed.png)
-
-- __Cloths Page__
-
-  - Cloths Page displays cloths for both male and female, boys and girls including babies.
-
-![Cloths Page](./assets/image/passed.png)
 
 
 # Blissful Fashion Store
@@ -383,6 +359,31 @@ the colors used are very warm and visable colors. user friendly
     - When logging out, the user is asked 'Are you sure' before signing out.
     - When signed out, the user is brought to the index/Signup page.
 
+- __Products Page__
+
+  - this page display all products available in the store , customers can scroll through the list of times and clich on them if they want to get some more discribtions
+  - All items can be clicked to deplay items details and quantitie selected before adding to carts
+  - Hardware Page displays hardwares like tolls for kids and other kitchen hardwares like pots
+
+![Products page](./assets/image/playsection.png)
+
+  - __Special Offers Page__
+
+  - Special Offers Page displays items on offers , these are discounted products due to age or seasons but till at good qualitys
+
+![Special Offers Page](./assets/image/passed.png)
+
+- __Hardware Page__
+
+  - Hardware Page displays hardwares like tolls for kids and other kitchen hardwares like pots
+
+![Hardware Page](./assets/image/passed.png)
+
+- __Cloths Page__
+
+  - Cloths Page displays cloths for both male and female, boys and girls including babies.
+
+![Cloths Page](./assets/image/passed.png)
   - *Footer:*
     - Footer is retained on signup and signin pages and contains information and contact details of the designer .
     - Footer also contains copyright for both this project.
@@ -449,56 +450,10 @@ This project was developed using the Agile methodology.
 The key principles adopted were; focus on the essential features first, work in small iterations and add extra features/expand scope as time permitted.
 
 
-The structure of development was: Milestone => Epic => Task/User Story.
-Epics were considered as iterations, and all of them contained 5 issues. Using the MoSCoW prioritization technique, they were separated into 60% as Must Have, 20% Should Have and 20% Could Have.
-
-Colored text was used when possible (using Tex) for organizing, color-coding and visual distinction.
-
 **Agile Planning**
 
 Before writing any code, everything was considered and planned as much as possible.
 
-<details>
-<summary>Timeboxing - GLOBAL</summary>
-As this is a project being developed with agile methodology, the following calculations are not set in stone, and there is a lot of flexibility calculated in the final numbers. I've decided to do the calculations to mainly help myself, to put the available time in perspective regarding the development.
-Things can change and there can always be an event or something might happen .
-This is why it makes it easier for me if I have these calculations before hand and can adjust accordingly.
-
-
-PP4 Due 31.08.2023 12:00
-
-Project needs to be ready ideally a week before to account for:
-								- possible issues with internet connection  
-								- issues with development environment
-								- any other act of "divine power"
-
-= CALCULATION =
-
-PP4 Due 26.08.2023
-
-Project start date: 17.08.2023
-
-Available weeks for development: 2
-
-Had only 5 hours each day (monday to friday) and spend 7 hours on weekends. As i work monday to Friday full time, i have a 2year old as well. my submission was late with 3days due to personal and technical issues when working on this project
-
-
-= CALCULATION = 
-
-
-= FINAL PREDICTION =
-
-Can invest about 20 hrs/week 
-
-
-IDEAL TOTAL HRS FOR PROJECT DEVELOPMENT = 20 hrs x 2 weeks === 40 Hrs
-
-
-The actual number will probably be higher accounting for out of my control situations,
-
-FINAL TOTAL === 50 hrs.
-            === 25 hrs/week
-</details>
 
 <details>
 <summary>Timeboxing Milestones-Epics</summary>
@@ -511,48 +466,15 @@ Epic = weekly timebox (2 days off from work, could be split in two - Epic/day)Pr
 3. EPIC - User registration/login, CRUD
 4. EPIC - Content and navigation - basic
 5. EPIC - Content and navigation beautify/Testing
-
-2. Milestone - Enhanced Project = 4 days timebox
-
 6. EPIC - Logic/functionality enhancements
 7. EPIC - Ux/content enhancements
-
-3. Milestone - Superior Project = 3 days timebox
-
 8. EPIC - Logic/functionality enhancements
 9. EPIC - Ux/content enhancements
-
-4. Milestone - README = 2 days timebox
-
 10. EPIC - README update and finish up
 </details>
 
 <details>
-<summary>Timeboxing - ITERATION</summary> 
-Similar to Time calculations - GLOBAL, these calculations are not set in stone (they're agile!) but serve as a guide/organizing tool for myself.
 
-
-- Task to be finished in a day preferably
-- Include revisions
-- Timeboxing - goal oriented, iteration/meeting/milestone level
-- MoSCoW technique = Must, Should, Could, Won't HAVE in each iteration/milestone
-- Must have - 60%, should have 20%, could have 20%, add labels for each
-
-
-= ITERATION TIMEBOXING = 
-
-- Iteration being on a daily basis for days off ( 10 hrs/day ) 
-- The day before, preferably prepare the next day's iteration plan using Projects Board/Issues and do a revision of work done
-- The rest of the days when working in store - deal with bugs/problems/plan ahead
-
-
-= EPIC/MILESTONE TIMEBOXING = 
-
-- Epic/Milestone should be on a weekly basis ( approx 20 hrs )
-- The day before, preferably prepare the next week's milestone plan using Projects Board/Issues and do a revision of work done
-</details>
-
----
 
 ## **Features**
 
@@ -797,10 +719,8 @@ These were only some of project enhancements that could be done. Using other Dja
 - [GitHub](https://github.com/) - Source code hosted on GitHub, deployed using Git Pages.
 - [GitPod](https://www.gitpod.io/) - Used to commit, comment and push code during the development process.
 - [Font Awesome](https://fontawesome.com/) - Font Awesome use dto source necessary icons used in the project.
-- [Google Keep](https://keep.google.com/) - Used to make notes during the project duration.
 - [LanguageTool](https://languagetool.org/) - Used for general spell-check.
 - [Google Fonts](https://fonts.google.com/) - Used to import fonts to the project.
-- [GifCap](https://gifcap.dev/) - Used to capture gif-s of the project .
 - [Heroku](https://www.heroku.com/) - Used to deploy the project.
 - [ElephantSQL](https://www.elephantsql.com/) - Free and open-source relational database management system (RDBMS).
 - [JsHint](https://jshint.com/) - Used for validating the javascript code.
@@ -810,8 +730,9 @@ These were only some of project enhancements that could be done. Using other Dja
 - [Chrome Del Tools](https://developer.chrome.com/docs/devtools/) - For debugging the project.
 - [W.A.V.E.](https://wave.webaim.org/) - Used for testing accessibility.
 - [LightHouse](https://developer.chrome.com/docs/lighthouse/overview/) - Used for testing performance.
+- [Amazon Web Services](https://s3.console.aws.amazon.com/s3/buckets/blissful-fashion-bucket?region=eu-north-1&bucketType=general&tab=objects) - Used for static files.
 
-[Back to top ⇧](#federal-bureau-of-control)
+[Back to top ⇧](#Blissful-Fashion)
 
 ---
 
