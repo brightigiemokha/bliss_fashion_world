@@ -159,12 +159,14 @@
               </a>
               <div class="col-lg-12 login-form">
                   <div class="col-lg-12 login-form">
+                    {% crispy form %}
+                    {% if redirect_field_value %} 
+                        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                    {% endif %}
+                
                       
                     <form method="post" action="{{ action_url }}" class="form">
-                        {# Add a class for styling #} {% csrf_token %} {% crispy form %} {# Render fields using crispy forms for cleaner HTML #} {% if redirect_field_value %}
-                        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-                        {% endif %}
-                    
+                        {% csrf_token %}
                         <div class="col-lg-12 loginbttm">
                             <div class="col-lg-6 login-btm login-text"></div>
                             <div class="mb-4">
