@@ -744,10 +744,9 @@ These were only some of project enhancements that could be done. Using other Dja
 - Create requirements.txt
 - Create Django project
 - Set up ElephantSQL Account
-- Set up Cloudinary Account
-- Create env.py to hold sensitive data
+- Set up AWS Account
 - Create Heroku app
-- For the final deployment, the debug setting in settings.py must be set to false
+- For the final deployment, the debug setting in settings.py must be set to 'DEVELOPMENT' in os.environ
 - Before final deployment, the DISABLE_COLLECTSTATIC config var in Heroku was removed
 - From Heroku connect to github repository 
 - Deploy from selected GitHub branch
@@ -757,21 +756,6 @@ An early deployment guide was made before project start to ensure success in cre
 <details>
 <summary>Early deployment guide</summary>
 
----
-
-Create repo as usual, from template
-
-Create user stories/issues - LOOK UP PREVIOUS GUIDE ABOUT PROJECTS/about milestones etc
-
-GITPOD
-
-IF ERROR BUILDING IMAGE - REFRESH PAGE
-- pip3 install 'django<4' gunicorn
-- pip3 install dj_database_url==0.5.0 psycopg2
-- pip3 install dj3-cloudinary-storage
-- pip3 freeze --local > requirements.txt
-
-=====  DONT FORGET THE FULL STOP  ====
 
 <django-admin startproject PROJ_NAME .>   
 
@@ -787,10 +771,8 @@ python3 manage.py runserver  ===> for TESTING, should see django install congrat
 DO NOT COMMIT
 
 HIDING SECRET KEY
-- Create File => .env
 - Cut this from settings.py =>
 - SECRET_KEY = '-----your secret key-----'
-- Paste in .env
 - Write this in settings.py =>
 - from decouple import config
 - SECRET_KEY = config("SECRET_KEY")
@@ -801,7 +783,6 @@ FOLLOW HEROKU INSTRUCTIONS
 
 FOLLOW ESQL INSTRUCTIONS
 
-in env.py 
 - import os
 - os.environ["DATABASE_URL"]="<copiedURL>"     === url from ESQL
 - os.environ["SECRET_KEY"]="my_super^secret@key"    === Django Secret key
@@ -841,12 +822,10 @@ RE CHECK python3 manage.py runserver
 
 Add secret key and secret database to heroku config vars, key=PORT value=8000
 
-Cloudinary
-- in env.py do 
-- os.environ["CLOUDINARY_URL"] = 'API_KEY_HERE'
+ BASE_DIR  
+- os.path.dirname(os.path.dirname(os.path.abspath(__file__))) = 'API_KEY_HERE'
 - add it to Heroku config vars
-- add to Heroku config vars:
-- key=DISABLE_COLLECTSTATIC    value=1
+- add to Heroku config vars
 
 
 to INSTALLED_APPS in settings.py add:
@@ -856,57 +835,11 @@ to INSTALLED_APPS in settings.py add:
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
     'blog',
 ```
 
-below STATIC_URL = '/static/'  add
-- STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
-- STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-- STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-- MEDIA_URL = '/media/'
-- DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-
-below BASE_DIR = Path(__file__).resolve().parent.parent add
-- TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
-
-update to this:
-```
-TEMPLATES = [
-    {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATES_DIR],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-            ],
-        },
-    },
-]
-```
-
-update ALLOWED_HOSTS = ['<APP NAME>.herokuapp.com', 'localhost']
-
-CREATE FOLDERS
-- media, templates, static
-
-create Procfile and put === web: gunicorn codestar.wsgi
-
-git add, commit and push
-
-deploy from Heroku via GitHub.
-</details>
-
-[Back to top ⇧]
-
----
 
 ## **Testing**
 
@@ -921,9 +854,8 @@ Testing information can be found in a separate testing file [TESTING.md](/TESTIN
 ### **Code used and adapted**
 
 
- - All characters, events and situations depicted (except for user self-made entries) are products of and copyrighted by [Remedy Entertainment Plc](https://www.remedygames.com/).
 
- - Code Institute guide/lessons were heavily relied on while working on development, mainly for the back-end. After the back end was developed the front end was adjusted.
+ - Code institute code was the base of this project and i have only improved on the code and added some features [Boutique Ado](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+EA101+2021_T1/courseware/eb05f06e62c64ac89823cc956fcd8191/3adff2bf4a78469db72c5330b1afa836/).
 
  - [Django documentation](https://docs.djangoproject.com/en/4.2/) was relied on to find code for back-end solutions and code.
 
@@ -946,22 +878,20 @@ Testing information can be found in a separate testing file [TESTING.md](/TESTIN
 There were many sites visited during the duration of the project.
 [Google](https://google.com/ "Google home page") was used to produce results of the specific query, and [Stack Overflow](https://stackoverflow.com/ "Stack Overflow home page") proved to be the best source of information for various queries/issues. 
 
-Standouts are [Django documentation](https://docs.djangoproject.com/en/4.2/), [Bootstrap documentation](https://getbootstrap.com/docs/5.3/getting-started/introduction/) and [Django-blog](https://djangocentral.com/building-a-blog-application-with-django/) that helped immensely.
+Standouts are [Django documentation](https://docs.djangoproject.com/en/4.2/), [Bootstrap documentation](https://getbootstrap.com/docs/5.3/getting-started/introduction/) and [Django-blog](https://djangocentral.com/building-a-blog-application-with-django/),[youtube](youtube.com) this helped alot in getting most answers to many of my questions
+A lot of other projects were looked into to help with development, standouts are [ PP5 Buotique Ado ](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+EA101+2021_T1/courseware/eb05f06e62c64ac89823cc956fcd8191/3adff2bf4a78469db72c5330b1afa836/).
 
-A lot of other projects were looked into to help with development, standouts are [ Destiny Franks (Desphixs)](https://www.youtube.com/@desphixs/about), [BError By Night](https://www.youtube.com/watch?v=0VF5twldC2Y&t=3147s).
-
-I watched some of the videos from (https://www.youtube.com/@desphixs/about)
 
 ###  **Acknowledgments**
 
-This whole project is dedicated to my family who in the most difficult position we faced through out my coding career have remained strong and supportive to me. its has been a long ride and we have faced alot of storms, most bitter part of out life so far but in all we are always gratfuly to our Lord and saviour Jesus Christ for giving us the streight and grace to come out of everything.
-- To my wife, thank you for your support and cheering me on, lifting me back up when it got hard. Thank you for taking care of all the housework and food, children and numerous other responsibilities while I was busy with full time job and doing this project on the side. Without you this journey would never be possible. And when it got hard and complicated, you never gave up on me and this dream of career change.
+This project is dedicated to my wife who have remain strong with me even through the 2 lost of our pregnancy during this 1year of study, it felt like hell but she gave me strenght to continue my project and never stopped pushing me to succeed.
+thanks for all your support and kind words , for your strenght and resilance you are the best thing that have happened to me.
+
 - To Shalon my beautiful girl. Thank you for being so understanding during the project work. Thank you from the bottom of my heart for being who you are, wonderful and delightful souls. You make me proud to be your dad.
 
 - Special mentions to Destiny Franks (Desphixs) thank you so much for been there for me every single step of this project this is all to you . i am gratful for your kindness and understanding. you where the back born to this project success. 
 - To Error By Night thanks alot for showing me the light and helping to answer my questions. i am gratfult for the team at discord for all your support.
 - To my most amazing Coach/co-student Tomislav_5P. i am not sure what to say to you for always making yourself available to answer and see me succeed. you have become more of a brother that i have never met . you love and support is truly appreciated. you will always be so special to me for there is no way i will write my coding career success without you on the front page.
-- To student support (Sarah) i got fedup of using this feature but when i was able to get in contact with you , you showed me i have missed alot for not using it. i am gratful for you help and patient.
 - Student support of Code Institute, thank you for granting the project deadline extension, it was much needed and appreciated.
 - 
 - Special thanks to Bojan Bakaric (co-student) whose Readme for project (FEDERAL BUREAU OF CONTROL) was used as a template for my readme. thanks alot for your support and advise.
