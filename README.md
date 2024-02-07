@@ -260,8 +260,8 @@ with Blissful fashion store its not too late to shop as there is a next day deli
 
 ### **Project Goals**
 
- - Develop Task Todo App using Django and python frameworks
- - Present the App in a clean and easy to understand manner
+ - Develop Blissful-Fashion website using Django and python frameworks
+ - Present the site easy to use and understand
  - Keep good UX principles regarding layout/colours/interaction
  - Robust Python code without issues/bugs
  - Fully responsive and immersive
@@ -394,6 +394,10 @@ the colors used are very warm and visable colors. user friendly
 - *Contact us page*
     - Contact us page have been setup to enable Users write to us about complaint or improvements. as customer feedback is always import for a business this have been added.   
 
+![Icons](./assets/image/passed.png)
+- font awesome was used alot to added styles to the website. expecially at the footer where it was used to add social media accounts and linked to developers site.
+- Favicon was also included to this site to make the link look more personalised and organised.
+
 
   - Database schema:
 
@@ -459,11 +463,6 @@ The key principles adopted were; focus on the essential features first, work in 
 Before writing any code, everything was considered and planned as much as possible.
 
 
-<details>
-<summary>Timeboxing Milestones-Epics</summary>
-Epic = weekly timebox (2 days off from work, could be split in two - Epic/day)Prepare the
-
-1. Milestone - MVP = 1 week timebox
 
 1. EPIC - Django Setup and early deployment
 2. EPIC - Set up models and views
@@ -627,8 +626,8 @@ Please refer to [TESTING.md](/TESTING.md) for more information about responsiven
 ---
 
 ## **Future Implementations**
-The following features could be added to FBD in the future. Project deadline influenced heavily what was left out.
-- Clean up of style.css. The css file is very big, consisting of more than 10 000 lines of code (not minified). The solution was looked for ([PurgeCSS](https://medium.com/dwarves-foundation/remove-unused-css-styles-from-bootstrap-using-purgecss-88395a2c5772)) and tried but was not successful within the project submission timeframe.
+The following features could be added to Blissful-fashion in the future. Project deadline influenced heavily what was left out.
+- Clean up of style.css. The css file is very big, consisting of more than 5 000 lines of code (not minified). The solution was looked for ([PurgeCSS](https://medium.com/dwarves-foundation/remove-unused-css-styles-from-bootstrap-using-purgecss-88395a2c5772)) and tried but was not successful within the project submission timeframe.
 - registration confirmation page
 
 These were only some of project enhancements that could be done. Using other Django apps and other API-s, logic and creativity could make this project into something really wonderful.
@@ -681,6 +680,7 @@ These were only some of project enhancements that could be done. Using other Dja
 - [W.A.V.E.](https://wave.webaim.org/) - Used for testing accessibility.
 - [LightHouse](https://developer.chrome.com/docs/lighthouse/overview/) - Used for testing performance.
 - [Amazon Web Services](https://s3.console.aws.amazon.com/s3/buckets/blissful-fashion-bucket?region=eu-north-1&bucketType=general&tab=objects) - Used for static files.
+- [Stripe](https://stripe.com/) - Used for financial transactions. Card payment services.
 
 [Back to top ⇧](#Blissful-Fashion)
 
@@ -747,14 +747,6 @@ to INSTALLED_APPS in settings.py add:
 ```
 
 
-## **Testing**
-
-Testing information can be found in a separate testing file [TESTING.md](/TESTING.md).
-
-[Back to top ⇧]
-
----
-
 ## **Credits**
 
 ### **Code used and adapted**
@@ -794,6 +786,8 @@ This project is dedicated to my wife who have remain strong with me even through
 thanks for all your support and kind words , for your strenght and resilance you are the best thing that have happened to me.
 
 - To Shalon my beautiful girl. Thank you for being so understanding during the project work. Thank you from the bottom of my heart for being who you are, wonderful and delightful souls. You make me proud to be your dad.
+
+- To CODE INSTITUTE for letting me use their Boutiqu Ado as a base template for this project. i couldnt have done it within the short time without your help.
 
 - Special mentions to Destiny Franks (Desphixs) thank you so much for been there for me every single step of this project this is all to you . i am gratful for your kindness and understanding. you where the back born to this project success. 
 - To Error By Night thanks alot for showing me the light and helping to answer my questions. i am gratfult for the team at discord for all your support.
