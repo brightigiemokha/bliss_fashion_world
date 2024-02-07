@@ -385,11 +385,15 @@ the colors used are very warm and visable colors. user friendly
 
 ![Cloths Page](./assets/image/passed.png)
   - *Footer:*
-    - Footer is retained on signup and signin pages and contains information and contact details of the designer .
+    - Footer is retained on all pages and contains information and contact details of the designer .
     - Footer also contains copyright for both this project.
    
   - *Error pages*
-    - Two error pages are supported, 404 (page not found) and 500 (internal server error), both with buttons that guide the user back to the home page.   
+    - Two error pages are supported, 404 (page not found) and 500 (internal server error), both with buttons that guide the user back to the home page.  
+
+- *Contact us page*
+    - Contact us page have been setup to enable Users write to us about complaint or improvements. as customer feedback is always import for a business this have been added.   
+
 
   - Database schema:
 
@@ -617,82 +621,29 @@ Please refer to [TESTING.md](/TESTING.md) for more information about responsiven
 ![Reports and Create Report has no warning text for admin](assets/features/20-admin-no-warning.gif/)
 </details>
 
-### **Admin page**
 
-<details>
-<summary>Admin can approve and publish report, visible on Reports page to a normal user</summary>
-
-![Admin can approve and publish report, visible on Reports page to a normal user](assets/features/21-admin-report-approve.gif)
-</details>
-
-<details>
-<summary>Admin can create a draft report</summary>
-
-![Admin can create a draft report](assets/features/22-admin-draft.gif)
-</details>
-
-<details>
-<summary>Admin can change a report, censoring perk</summary>
-
-![Admin can change a report, censoring perk working](assets/features/23-admin-censor.gif)
-</details>
-
-<details>
-<summary>Admin can delete a report and user</summary>
-
-![Admin can delete a report and user](assets/features/24-admin-delete.gif)
-</details>
-
-<details>
-<summary>Admin can approve and change a comment</summary>
-
-![Admin can approve and change a comment](assets/features/25-admin-comment-change.gif)
-</details>
-
-<details>
-<summary>Admin can delete a comment</summary>
-
-![Admin can delete a comment](assets/features/26-admin-delete-comment.gif)
-</details>
-
-### **Error pages**
-
-<details>
-<summary>Error 400 (page not found) page with 'Go Home' button</summary>
-
-![Error 400 (page not found) page with 'Go Home' button](assets/features/27-error-400.gif)
-</details>
-
-<details>
-<summary>Error 500 (internal server error) page with 'Go Home' button</summary>
-
-![Error 500 (internal server error) page with 'Go Home' button](assets/features/28-error-500.gif)
-</details>
-
----
-
-[Back to top ⇧](#federal-bureau-of-control)
+[Back to top ⇧](#Blissful-Fashion)
 
 ---
 
 ## **Future Implementations**
-
 The following features could be added to FBD in the future. Project deadline influenced heavily what was left out.
-
-  - Fix naming of the classes vs pages, for example the event class is used to produce Report. The event class was conceived early in the project and left as is rather than to risk breaking the code somewhere, rendering the project submission in danger.
-  - After user submits a comment, the success message is rendered at the top of the page, it would be a better UX if the user is left where the comment was entered.
-  - Ability for the user to modify/delete their comments
-  - Adding a event/report type selector for the user, so when the user is submitting a report there is a choice of what type of event/report it is (AWE, AI, OoP)
-  - Make dedicated page with image carousel for each type of report (AWE, AI, OoP)
-  - Use some kind of text censoring API, to make censoring of the reports automated
-  - Add email required, working email verification and password recovery
-  - More social sign-in options
-  - GitHub sign in button on Register page
-  - Clean up of style.css. The css file is very big, consisting of more than 10 000 lines of code (not minified). The solution was looked for ([PurgeCSS](https://medium.com/dwarves-foundation/remove-unused-css-styles-from-bootstrap-using-purgecss-88395a2c5772)) and tried but was not successful within the project submission timeframe.
+- Clean up of style.css. The css file is very big, consisting of more than 10 000 lines of code (not minified). The solution was looked for ([PurgeCSS](https://medium.com/dwarves-foundation/remove-unused-css-styles-from-bootstrap-using-purgecss-88395a2c5772)) and tried but was not successful within the project submission timeframe.
+- registration confirmation page
 
 These were only some of project enhancements that could be done. Using other Django apps and other API-s, logic and creativity could make this project into something really wonderful.
 
-[Back to top ⇧](#federal-bureau-of-control)
+
+## **Already Implemented**
+  - Ability for the user to add their comments / reviews
+  - Use some kind of text censoring API, to make censoring of the reports automated
+  - Add email required, working email verification and password recovery
+  - Gmail signin / restration obtions
+  - GitHub sign in button on Register page
+  
+
+
+[Back to top ⇧](#Blissful-Fashion)
 
 ---
 
@@ -709,8 +660,7 @@ These were only some of project enhancements that could be done. Using other Dja
 
 - [Django](https://www.djangoproject.com/) - A Python-based web framework that follows the model-template-view architectural pattern, used for building the project.
 - [django-allauth](https://django-allauth.readthedocs.io/) - A Django application used for account registration, management, and authentication.
-- [cloudinary_storage](https://cloudinary.com/) - A Django storage backend for Cloudinary, used for image hosting and storage.
-- [django_summernote](https://django-summernote.readthedocs.io/) - A Django application that integrates the Summernote WYSIWYG editor into Django projects.
+- [Amazon Web Services](https://aws.amazon.com/) - A Django storage backend for AWS, used for image hosting and storage.
 - [crispy_forms](https://django-crispy-forms.readthedocs.io/) - A Django application that makes it easy to style Django forms.
 - [crispy_bootstrap5](https://pypi.org/project/crispy-bootstrap5/) - A package that provides Bootstrap 5 styling for Django crispy-forms.
 
@@ -748,6 +698,7 @@ These were only some of project enhancements that could be done. Using other Dja
 - Create Heroku app
 - For the final deployment, the debug setting in settings.py must be set to 'DEVELOPMENT' in os.environ
 - Before final deployment, the DISABLE_COLLECTSTATIC config var in Heroku was removed
+- Before deployment all static and media files added to AWS bucket created
 - From Heroku connect to github repository 
 - Deploy from selected GitHub branch
 - Click on Deploy button => project is now deployed.
@@ -779,55 +730,10 @@ HIDING SECRET KEY
 - Write this in terminal or cmd =>
 - pip install python-decouple
 
-FOLLOW HEROKU INSTRUCTIONS
 
-FOLLOW ESQL INSTRUCTIONS
-
-- import os
-- os.environ["DATABASE_URL"]="<copiedURL>"     === url from ESQL
-- os.environ["SECRET_KEY"]="my_super^secret@key"    === Django Secret key
-
-in settings.py
-- import os
-- import dj_database_url
-- if os.path.isfile('env.py'):
-- import env
-
-replace Django secret with === SECRET_KEY = os.environ.get('SECRET_KEY')
-
-replace this:
-```
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-  }
-}
-```
-with this:
-```
- DATABASES = {
-     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
- }
-```
-
-!!! IMPORTANT  -  CTRL+S everything
-
-python manage.py migrate
-
-CONNECTION CHECK ON ESQL
-
-Add, commit, push
-RE CHECK python3 manage.py runserver
-
-Add secret key and secret database to heroku config vars, key=PORT value=8000
-
- BASE_DIR  
-- os.path.dirname(os.path.dirname(os.path.abspath(__file__))) = 'API_KEY_HERE'
-- add it to Heroku config vars
-- add to Heroku config vars
-
-
+## **Deployment**
+- All static files and media were all exported to amazon web services from where the files are loaded to our site.
+- AWS S3 Bucket and IAM were setup and connfigured to store and share static files and media
 to INSTALLED_APPS in settings.py add:
 ```
     'django.contrib.admin',
