@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import UserProfile
 from .forms import UserProfileForm
-from .models import Contact
+from .models import Contact, MailList
 
 from checkout.models import Order
 
@@ -61,3 +61,12 @@ def contact_view(request):
         messages.success(request, "Message sent successfully, an agent will be contact you soon")
         return redirect("contact_view")
     return render(request, 'profiles/contact_view.html')
+
+
+def subscribe_to_maillist(request):
+    if request.method == 'POST':
+        email = request.POST.get("email")
+
+        MailList.objects.create( email=email )
+        messages.success(request, "Thanks for subscribing to our mailing list")
+        return redirect("/")

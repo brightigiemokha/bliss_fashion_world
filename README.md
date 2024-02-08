@@ -15,7 +15,7 @@
 
 
 
-  ![Front page](./assets/image/scores.png)
+  ![Front page](media/homepage_background_cropped.jpg)
 
  
 
@@ -34,7 +34,7 @@ some of the benefits giving to customers are:
 
 ![Responsive website image](assets/image/todo-responsive-design.png)
 
-Visit the live site [Here.](https://ckz8780-django-task-app-2295e6f698e4.herokuapp.com/"Link to Anyiador Todo Task App")
+Visit the live site [Here.](https://blissful-fashion-0cb729cb8dac.herokuapp.com/"Link to Anyiador Todo Task App")
 
 ---
 
@@ -365,7 +365,9 @@ the colors used are very warm and visable colors. user friendly
   - All items can be clicked to deplay items details and quantitie selected before adding to carts
   - Hardware Page displays hardwares like tolls for kids and other kitchen hardwares like pots
 
-![Products page](./assets/image/playsection.png)
+![Products page](media/product-page.jpg)
+![Products page](media/add-product.jpg)
+
 
   - __Special Offers Page__
 
@@ -394,9 +396,12 @@ the colors used are very warm and visable colors. user friendly
 - *Contact us page*
     - Contact us page have been setup to enable Users write to us about complaint or improvements. as customer feedback is always import for a business this have been added.   
 
-![Icons](./assets/image/passed.png)
+![Icons](media/footer.jpg)
 - font awesome was used alot to added styles to the website. expecially at the footer where it was used to add social media accounts and linked to developers site.
 - Favicon was also included to this site to make the link look more personalised and organised.
+
+![Footer](media/footer.jpg) 
+- Footer links open in a new tab, tooltips present on logo, title and footer links.
 
 
   - Database schema:
@@ -442,7 +447,7 @@ Wireframes for Assessment Guide and Project Planning & Ux were made before the o
 <details>
 <summary>Assessment guide wireframe</summary>
 
-![Assessment guide wireframe](static/image/wireframes.png)
+![Assessment guide wireframe](media/wireframe.jpg)
 </details>
 
 <details>
@@ -484,146 +489,6 @@ Before writing any code, everything was considered and planned as much as possib
 All of the features presented in this sections are fully responsive on all devices and screen widths.
 Please refer to [TESTING.md](/TESTING.md) for more information about responsiveness testing.
 
-### **Intro/splash/index**
-
-<details>
-<summary>Content disclaimer firing when opening the page for the first time, not firing on subsequent visit, spinning logo and animated center text</summary>
-
-![Content disclaimer](assets/features/1-intro-modal.gif)
-</details>
-
-<details>
-<summary>Content disclaimer firing when the user clicks on it, link inside the modal opens in a new tab, close modal button</summary>
-
-![User Content disclaimer](assets/features/2-content-modal-link.gif)
-</details>
-
-<details>
-<summary>Footer links open in a new tab, tooltips present on logo, title and footer links</summary>
-
-![Footer links](assets/features/3-footer-links.gif)
-</details>
-
-### **Home**
-
-<details>
-<summary>Unregistered user can open home page, warning modals for reports/create reports</summary>
-
-![Unregistered user modals](assets/features/4-unregistered-modals.gif)
-</details>
-
-<details>
-<summary>Unregistered user warning modal links and close button</summary>
-
-![Unregistered user warning modal links and close button](assets/features/5-unregistered-modal-links.gif)
-</details>
-
-<details>
-<summary>Home page 'More Info' modals</summary>
-
-![Home page 'More Info' modals](assets/features/6-home-modals.gif)
-</details>
-
-### **Sign Up**
-
-<details>
-<summary>Cross-links between Sign-up and Log In</summary>
-
-![Cross-links between Sign-up and Log In](assets/features/7-register-login-cross-links.gif)
-</details>
-
-<details>
-<summary>Successful registering success message</summary>
-
-![Successful registering success message](assets/features/8-registering-success.gif)
-</details>
-
-### **Log In/Out**
-
-<details>
-<summary>Successful login success message, Agent name in top right corner</summary>
-
-![Successful login success message, Agent name in top right corner](assets/features/9-login-success.gif)
-</details>
-
-<details>
-<summary>GitHub log in</summary>
-
-![GitHub log in](assets/features/10-github-register.gif)
-</details>
-
-<details>
-<summary>Sure you want to log out page, logging out success message, no Agent name in top right corner</summary>
-
-![Sure you want to log out page, logging out success message, no Agent name in top right corner](assets/features/11-logout-success.gif)
-</details>
-
-### **Reports**
-
-<details>
-<summary>Paginated view of reports with like/dislike counters, next/back page button</summary>
-
-![Paginated view of reports with like/dislike counters, next/back page button](assets/features/12-reports-paginated.gif)
-</details>
-
-<details>
-<summary>Open an report, like/dislike buttons</summary>
-
-![Open an report, like/dislike buttons](assets/features/13-open-report.gif)
-</details>
-
-<details>
-<summary>Adding a comment, comments counter updating, if no comments - message</summary>
-
-![Adding a comment, comments counter updating, if no comments - message](assets/features/14-comment.gif)
-</details>
-
-### **Create Report**
-
-<details>
-<summary>Adding a report, template image if no image uploaded, director approval needed message and redirect to My-Reports page, added report not visible on Reports page</summary>
-
-![Adding a report, template image if no image uploaded, director approval needed message and redirect](assets/features/15-add-report.gif)
-</details>
-
-### **My Reports**
-
-<details>
-<summary>Paginated view of user's reports, unique for each user, Update/Edit and Delete buttons show up for user's own report</summary>
-
-![Paginated view of user's reports, unique for each user, Update/Edit and Delete buttons show up for user's own report](assets/features/16-user-report.gif)
-</details>
-
-<details>
-<summary>Update Report and success message</summary>
-
-![Update Report and success message](assets/features/17-update-report.gif)
-</details>
-
-<details>
-<summary>Delete Report, 'are you sure' question and success message</summary>
-
-![Delete Report, 'are you sure' question and success message](assets/features/18-delete-report.gif)
-</details>
-
-### **Admin/Director site differences**
-
-<details>
-<summary>Director access extra nav link for admin opening admin page in a separate tab, top right corner changes from Agent: *user* to Director: *user*</summary>
-
-![Director access extra nav link for admin opening admin page in a separate tab, top right corner changes from Agent: *user* to Director: *user*](assets/features/19-admin-login.gif)
-</details>
-
-<details>
-<summary>Reports and Create Report has no warning text for admin</summary>
-
-![Reports and Create Report has no warning text for admin](assets/features/20-admin-no-warning.gif/)
-</details>
-
-
-[Back to top ⇧](#Blissful-Fashion)
-
----
 
 ## **Future Implementations**
 The following features could be added to Blissful-fashion in the future. Project deadline influenced heavily what was left out.
@@ -635,10 +500,12 @@ These were only some of project enhancements that could be done. Using other Dja
 
 ## **Already Implemented**
   - Ability for the user to add their comments / reviews
-  - Use some kind of text censoring API, to make censoring of the reports automated
   - Add email required, working email verification and password recovery
   - Gmail signin / restration obtions
   - GitHub sign in button on Register page
+  - Footer
+  - contact us
+  - link to developer
   
 
 
@@ -742,8 +609,21 @@ to INSTALLED_APPS in settings.py add:
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'cloudinary',
-    'blog',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google', 
+    'allauth.socialaccount.providers.facebook', 
+    'allauth.socialaccount.providers.github', 
+    'home',
+    'products',
+    'bag',
+    'checkout',
+    'profiles',
+    'crispy_forms',
+    'crispy_bootstrap5',
+    'storages',
 ```
 
 
