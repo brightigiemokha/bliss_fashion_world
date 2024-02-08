@@ -15,13 +15,23 @@
 <p>{% blocktrans with site.name as site_name %}Please sign in with one
 of your existing third party accounts. Or, <a href="{{ home_urls }}">Home Page</a>
 for a {{ site_name }} Error Page:{% endblocktrans %}</p>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
 
 <div class="error">
     <h2>Oops! Page Not Found.</h2>
     <h1>404</h1>
     <p>we can't fine the page you are looking for.</p>
-    <a href="index.html">GO BACK HOME</a>
+    <a href="{{ home_urls }}">GO BACK HOME</a>
 </div>
 
 {% endblock %}
