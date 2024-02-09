@@ -57,7 +57,7 @@ def contact_view(request):
         email = request.POST.get("email")
         message = request.POST.get("message")
 
-        Contact.objects.create( full_name=full_name, email=email, message=message,)
+        Contact.objects.create(full_name=full_name, email=email, message=message,)
         messages.success(request, "Message sent successfully, an agent will be contact you soon")
         return redirect("contact_view")
     return render(request, 'profiles/contact_view.html')
@@ -67,6 +67,6 @@ def subscribe_to_maillist(request):
     if request.method == 'POST':
         email = request.POST.get("email")
 
-        MailList.objects.create( email=email )
+        MailList.objects.create(email=email)
         messages.success(request, "Thanks for subscribing to our mailing list")
         return redirect("/")

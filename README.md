@@ -1,42 +1,4 @@
 
-## Features 
-
-
-### Existing Features
-
-- __front page view__
-
-  - this is the main / front page of the site . it welcomes choppers to the site with information of sales available to them. here a shopper can decide to go shopping by clicking on the shop now to open the door to an amazing world of items for shopping.
-  - the page have search bar at the top which will give customers the opportunity to search for what they would want to buy directly.
-  - this page also have the user login / registration link for customers who already have an account or would love to have an account.
-  - this page have carts where customer can see what they have kept on the cart and total cost.
-  - this page have links to the products, special offers, hardwares and cloths .
-  links are all responsive and user can click on the store name to get to this page at any time.
-
-
-
-  ![Front page](media/homepage_background_cropped.jpg)
-
- 
-
-
-
-# Blissful Fashion Store
-
-Blissful Fashion Store is an E-commerce site for shoppers who would love to go online and get items for their homes. the site is very secure with a secure payment system from stripe. this site offer users with great benefits and users are able to get their orders delivered to them on a next day delivery system all over Europe and UK.
-this is a easy to use site that have image of products and quantity needed can be selected by customer and placed in a basket until customer is done with shopping then can go to cart to see abd pay for item selected. 
-in the basket customers can chose to reduce the quantity of items they have previously selected and can also add to the quantity before making a payment. details of deliver address and names are require to complete the transactions.
-some of the benefits giving to customers are: 
-1. customers wouldn't be charged for delivery of times above the amount......
-2. there is a coupon offer for regular shopper / customers who have made a large order. such coupon are forworded to their email as a thank you gesture
-3. customers can login / register easily using their google or github accounts .
-
-
-![Responsive website image](assets/image/todo-responsive-design.png)
-
-Visit the live site [Here.](https://blissful-fashion-0cb729cb8dac.herokuapp.com/"Link to Anyiador Todo Task App")
-
----
 
 ## CONTENTS
 
@@ -49,12 +11,8 @@ Visit the live site [Here.](https://blissful-fashion-0cb729cb8dac.herokuapp.com/
 
 * [Design](#design)
   * [Colour Scheme](#colour-scheme)
-  * [Imagery](#imagery)
-  * [Structure](#structure)
   * [Database Design](#database-design)
   * [Wireframes](#wireframes)
-
-* [Agile Project Management](#agile-project-management)
 
 * [Features](#features)
 
@@ -74,188 +32,39 @@ Visit the live site [Here.](https://blissful-fashion-0cb729cb8dac.herokuapp.com/
   * [Acknowledgments](#acknowledgments)
 
 ---
-## Automated Testing
 
-### **W3C HTML Validator**
-
-The [HTML W3C HTML Validator](https://validator.w3.org/#validate_by_uri+with_options) was used to validate the HTML code used, showing no errors except on single report page, 'strike' element is obsolete. As this is a feature (text censoring from admin site) and works as intended, the error is disregarded.
-
-
-
- - Login
- <br>
-
- ![Login](static/image/w3c_html_check.png)
-
- - SignUp
- <br>
-
- ![Signup](static/image/w3c_html_signup.png)
-
-- Front Page
- <br>
- ![Task page](static/image/w3c_taskpage.png)
-
- - Cart page
- <br>
-
- ![Cart Task](static/image/w3c_createtask.png)
-
- - Delete Report
- <br>
-
- ![Delete Task](static/image/w3c_delete.png)
-
-
-### **W3C CSS Validator**
-
-The [CSS Jigsaw CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_uri) was used to validate the CSS code used, showing no errors on the customized style.css, uploaded by direct input.
-
- - CSS validation
- <br>
-
- ![CSS Validation](static/image/w3c_css.png)
-
-### **JSHINT Javascript Validator**
-
-The [JsHint](https://jshint.com/) was used to validate the Javascript code used, showing no errors.
-
- - Javascript validation
- <br>
-
- ![Javascript validation](static/image/jshint.png)
-
-### **CI Python Linter**
-
-The [CI Python Linter](https://pep8ci.herokuapp.com/) was used to validate the Python code used, showing no errors except for one 'line too long' in settings.py. This could not be resolved despite best efforts.
-
- - admin.py
- <br>
-
- ![admin.py](static/image/python_admin.png)
-
- - forms.py
- <br>
-
- ![apps.py](static/image/python_apps.png)
-
- - manage.py
- <br>
-
- ![manage.py](static/image/python_manage.png)
-
- - models.py
- <br>
-
- ![models.py](static/image/python_model.png)
-
- - settings.py
- <br>
-
- ![settings.py](static/image/python_setting.png)
-
- - urls.py
- <br>
-
- ![urls.py](static/image/python_url.png)
-
- - urls.py-project
- <br>
-
- ![views.py](static/image/python_views.png)
-
-### **Lighthouse**
-
-The [LightHouse](https://developer.chrome.com/docs/lighthouse/overview/) was used for testing performance.
-
-#### **Desktop**
-
-
- - Login
- <br>
-
- ![Login](static/image/lighthouse_login_desktop.png)
-
- - SignOut
- <br>
-
- ![Signup](static/image/lighthouse_signup_desktop.png)
-
- - Add Task
- <br>
-
- ![Create Task](static/image/lh_adddtask_desktop.png)
-
- - Edit Task
- <br>
-
- ![Edit Task](static/image/lh_adddtask_desktop.png)
-
- - Delete Report
- <br>
-
- ![Delete report](static/image/lh_deletepage_desktop.png)
-
-#### **Mobile**
-
-  - Login
- <br>
-
- ![Login](static/image/lighthouse_login_mobile.png)
-
- - SignOut
- <br>
-
- ![Signup](static/image/lighthouse_signup_mobile.png)
-
- - Add Task
- <br>
-
- ![Create Task](static/image/lh_adddtask_mobile.png)
-
- - Edit Task
- <br>
-
- ![Edit Task](static/image/lh_adddtask_mobile.png)
-
- - Delete Report
- <br>
-
- ![Delete report](static/image/lh_deletepage_mobile.png)
-
-[Back to top ⇧]
-
----
-## **Accessibility**
-
-### **WAVE WebAim**
-
-The [W.A.V.E.](https://wave.webaim.org/) was used to test for accessibility, showing no errors except for a single report page on censored (blacked-out) text. As this is a feature and works as intended, the contrast errors are disregarded.
-
- - Index
- <br>
-
-
- - Login
- <br>
-
- ![Login](static/image/wave_login.png)
-
- - SignUp
- <br>
-
- ![SignUp](static/image/wave_signup.png)
- 
-
-[Back to top ⇧]
 
 ---
 ## **Project Overview**
 
-The Idea foir this project was to create a good and relable platform for people to do their shopping without going to the supermarket personally. Blissful fashion cover most of users household needs which make it very convinent to use as you could get almost everything you want in one place.
-Kids are not left out, as parents can shop for cloths,tolls and shoes for their children all in one place.
-with Blissful fashion store its not too late to shop as there is a next day delivery option for everyone.
+# Blissful Fashion Store
 
+Blissful Fashion Store is an E-commerce site for shoppers who would love to go online and get items for their homes. the site is very secure with a secure payment system from stripe. this site offer users with great benefits and users are able to get their orders delivered to them on a next day delivery system all over Europe and UK.
+this is a easy to use site that have image of products and quantity needed can be selected by customer and placed in a basket until customer is done with shopping then can go to cart to see abd pay for item selected. 
+in the basket customers can chose to reduce the quantity of items they have previously selected and can also add to the quantity before making a payment. details of deliver address and names are require to complete the transactions.
+some of the benefits giving to customers are: 
+1. customers wouldn't be charged for delivery of times above the amount......
+2. there is a coupon offer for regular shopper / customers who have made a large order. such coupon are forworded to their email as a thank you gesture
+3. customers can login / register easily using their google or github accounts .
+
+
+![Responsive website image](media/responsive_design.jpg)
+
+Visit the live site [Here.](https://blissful-fashion-0cb729cb8dac.herokuapp.com/"Link to Blissful Fashion site")
+
+---
+- __front page view__
+
+  - this is the main / front page of the site . it welcomes choppers to the site with information of sales available to them. here a shopper can decide to go shopping by clicking on the shop now to open the door to an amazing world of items for shopping.
+  - the page have search bar at the top which will give customers the opportunity to search for what they would want to buy directly.
+  - this page also have the user login / registration link for customers who already have an account or would love to have an account.
+  - this page have carts where customer can see what they have kept on the cart and total cost.
+  - this page have links to the products, special offers, hardwares and cloths .
+  links are all responsive and user can click on the store name to get to this page at any time.
+
+
+
+  ![Front page](media/front_page.mp4)
 ---
 
 ### **Project Goals**
@@ -265,6 +74,8 @@ with Blissful fashion store its not too late to shop as there is a next day deli
  - Keep good UX principles regarding layout/colours/interaction
  - Robust Python code without issues/bugs
  - Fully responsive and immersive
+
+
 
 [Back to top ⇧](#Blissful-Fashion)
 
@@ -373,28 +184,33 @@ the colors used are very warm and visable colors. user friendly
 
   - Special Offers Page displays items on offers , these are discounted products due to age or seasons but till at good qualitys
 
-![Special Offers Page](./assets/image/passed.png)
+
 
 - __Hardware Page__
 
   - Hardware Page displays hardwares like tolls for kids and other kitchen hardwares like pots
 
-![Hardware Page](./assets/image/passed.png)
+![Hardware Page](media/hardware.jpg)
 
 - __Cloths Page__
 
   - Cloths Page displays cloths for both male and female, boys and girls including babies.
 
-![Cloths Page](./assets/image/passed.png)
+![Cloths Page](media/cloths.jpg)
   - *Footer:*
     - Footer is retained on all pages and contains information and contact details of the designer .
     - Footer also contains copyright for both this project.
+
+![Footer](media/footer.jpg)
    
   - *Error pages*
     - Two error pages are supported, 404 (page not found) and 500 (internal server error), both with buttons that guide the user back to the home page.  
 
 - *Contact us page*
     - Contact us page have been setup to enable Users write to us about complaint or improvements. as customer feedback is always import for a business this have been added.   
+
+![Footer](media/contactus.mp4)
+![Footer](media/contactus_page.jpg)
 
 ![Icons](media/footer.jpg)
 - font awesome was used alot to added styles to the website. expecially at the footer where it was used to add social media accounts and linked to developers site.
@@ -496,6 +312,7 @@ The following features could be added to Blissful-fashion in the future. Project
 - registration confirmation page
 
 These were only some of project enhancements that could be done. Using other Django apps and other API-s, logic and creativity could make this project into something really wonderful.
+- a more detailed readme
 
 
 ## **Already Implemented**
@@ -626,6 +443,172 @@ to INSTALLED_APPS in settings.py add:
     'storages',
 ```
 
+## Automated Testing
+
+### **W3C HTML Validator**
+
+The [HTML W3C HTML Validator](https://validator.w3.org/#validate_by_uri+with_options) was used to validate the HTML code used, showing no errors except on single report page, 'strike' element is obsolete. As this is a feature (text censoring from admin site) and works as intended, the error is disregarded.
+
+
+
+ 
+ <br>
+
+ ![Login](media/Login_validator_desktop.jpg)
+
+ - SignUp
+ <br>
+
+ ![Signup](media/signup_validator.jpg)
+
+
+ - Index page
+ <br>
+
+ ![Index Task](media/index_validate.jpg)
+
+ - product page
+ <br>
+
+ ![Product Task](media/product_validator.jpg)
+
+
+### **W3C CSS Validator**
+
+The [CSS Jigsaw CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_uri) was used to validate the CSS code used, showing no errors on the customized style.css, uploaded by direct input.
+
+ - CSS validation
+ <br>
+
+ ![CSS Validation](media/W3C_css_validator.jpg)
+
+### **JSHINT Javascript Validator**
+
+The [JsHint](https://jshint.com/) was used to validate the Javascript code used, showing no errors.
+
+ - Javascript validation
+ <br>
+
+ ![Javascript validation](media/login_js.jpg)
+ ![Javascript validation](media/signup_js.jpg)
+ ![Javascript validation](media/product_js.jpg)
+
+### **CI Python Linter**
+
+The [CI Python Linter](https://pep8ci.herokuapp.com/) was used to validate the Python code used, showing no errors except for 'line too long'. there was no time to break all of the long code as i was also worried about breaking my code. This could not be resolved despite best efforts due to short time.
+
+ - admin.py
+ <br>
+
+ ![admin.py](media/ci_python_linter_admin.jpg)
+
+ - forms.py
+ <br>
+
+ ![apps.py](media/ci_python_linter_forms.jpg)
+
+
+
+ - models.py
+ <br>
+
+ ![models.py](media/ci_python_linter_models.jpg)
+
+ - settings.py
+ <br>
+
+ ![settings.py](media/ci_python_linter_settings.jpg)
+
+ - urls.py
+ <br>
+
+ ![urls.py](media/ci_python_linter_url.jpg)
+
+
+### **Lighthouse**
+
+The [LightHouse](https://developer.chrome.com/docs/lighthouse/overview/) was used for testing performance.
+
+#### **Desktop**
+
+
+ - Login
+ <br>
+
+ ![Login](media/light_house_desktop_signin.jpg)
+
+ - SignOut
+ <br>
+
+ ![Signup](media/light_house_desktop_signup.jpg)
+
+ - Product
+ <br>
+
+ ![Product page](media/light_house_desktop_product.jpg)
+
+ - Contact Us
+ <br>
+
+ ![contact us](media/light_house_desktop_contact.jpg)
+
+ - Bag
+ <br>
+
+ ![Bag](media/light_house_desktop_bag.jpg)
+
+#### **Mobile**
+
+  - Login
+ <br>
+
+ - Login
+ <br>
+
+ ![Login](media/light_house_mobile_signin.jpg)
+
+ - SignOut
+ <br>
+
+ ![Signup](media/light_house_mobile_signup.jpg)
+
+ - Product
+ <br>
+
+ ![Product page](media/light_house_mobile_product.jpg)
+
+ - Contact Us
+ <br>
+
+ ![contact us](media/light_house_mobile_contact.jpg)
+
+ - Delete Report
+ <br>
+
+ ![Bag](media/light_house_mobile_bag.jpg)
+
+[Back to top ⇧]
+
+---
+## **Accessibility**
+
+### **WAVE WebAim**
+
+The [W.A.V.E.](https://wave.webaim.org/) was used to test for accessibility, showing 3 errors this is due to the use of Marquee and empty button. due to time for submittion this have not been solved. 2 contrast were ignored
+
+ - Index
+ <br>
+
+
+ - Login
+ <br>
+
+ ![wave](media/wave.jpg)
+
+
+ 
+
+[Back to top ⇧]
 
 ## **Credits**
 

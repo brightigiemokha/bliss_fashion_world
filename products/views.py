@@ -9,6 +9,7 @@ from .forms import ProductForm
 
 # Create your views here.
 
+
 def all_products(request):
     """ A view to show all products, including sorting and search queries """
 
@@ -32,7 +33,7 @@ def all_products(request):
                 if direction == 'desc':
                     sortkey = f'-{sortkey}'
             products = products.order_by(sortkey)
-            
+
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
             products = products.filter(category__name__in=categories)
@@ -43,7 +44,7 @@ def all_products(request):
             if not query:
                 messages.error(request, "You didn't enter any search criteria!")
                 return redirect(reverse('products'))
-            
+
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
 
@@ -71,7 +72,6 @@ def product_detail(request, product_id):
         print("rating ====", rating)
         print("content ====", content)
 
-
         reviews = Review.objects.filter(created_by=request.user, product=product)
         if reviews:
             review = reviews.first()
@@ -87,7 +87,7 @@ def product_detail(request, product_id):
                 product=product
             )
             messages.success(request, "Review created successfully")
-        
+
         return redirect(reverse('product_detail', args=[product.id]))
 
     context = {
@@ -114,7 +114,7 @@ def add_product(request):
             messages.error(request, 'Failed to add product. Please ensure the form is valid.')
     else:
         form = ProductForm()
-        
+
     template = 'products/add_product.html'
     context = {
         'form': form,
@@ -169,9 +169,6 @@ def product(request, slug):
     """ customer review """
     product = get_object_or_404(Product, slug=slug)
 
-    
-
-            
     return render(request, 'products/products.html', {'products': product})
 
 
@@ -182,7 +179,6 @@ def create_review(request, id):
 
     print("rating ====", rating)
     print("content ====", content)
-
 
     reviews = Review.objects.filter(created_by=request.user, Product=product)
 
@@ -201,7 +197,4 @@ def create_review(request, id):
         )
         messages.success(request, "Review created successfully")
 
-
     return redirect('product_detail', id=id)
-
-    
