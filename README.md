@@ -448,7 +448,7 @@ to INSTALLED_APPS in settings.py add:
 ### **W3C HTML Validator**
 
 The [HTML W3C HTML Validator](https://validator.w3.org/#validate_by_uri+with_options) was used to validate the HTML code used, showing no errors except on single report page, 'strike' element is obsolete. As this is a feature (text censoring from admin site) and works as intended, the error is disregarded.
-
+- at the last minute to my submitting this project i have discoverred some broken links due to my testing and adjusting site. i have now under most of the changes just to cause the site to run well and project submitted due to the last minute. there changes includ the extra spaces for all python codes.
 
 
  
