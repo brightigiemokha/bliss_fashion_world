@@ -251,6 +251,8 @@ STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
+
+# live email
 if 'DEVELOPMENT' in os.environ:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
     DEFAULT_FROM_EMAIL = 'blissfulfashion@example.com'
