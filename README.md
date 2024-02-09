@@ -50,7 +50,7 @@ some of the benefits giving to customers are:
 
 ![Responsive website image](media/responsive_design.jpg)
 
-Visit the live site [Here.](https://blissful-fashion-0cb729cb8dac.herokuapp.com/"Link to Blissful Fashion site")
+Visit the live site [Here.](https://blissful-fashion-0cb729cb8dac.herokuapp.com/ "Link to Blissful Fashion site")
 
 ---
 - __front page view__
