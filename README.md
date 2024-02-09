@@ -48,6 +48,14 @@ some of the benefits giving to customers are:
 3. customers can login / register easily using their google or github accounts .
 
 
+# Error 
+- it is very important that i explain i have left the site Debug as true as i didnt have enough time to solve problem issues with Css after debug is set to development
+- code got broken at the time of submission and i was then too late to start all over again as there is no time left.
+- please see terminal issue with Debug
+![Terminal error for debug](media/debug_error.jpg)
+- Secret key also had issues when removed as site couldnt see the key in heroku. didnt have enough time to solve all this please
+![Secret Key](media/secret_key.jpg)
+
 ![Responsive website image](media/responsive_design.jpg)
 
 Visit the live site [Here.](https://blissful-fashion-0cb729cb8dac.herokuapp.com/ "Link to Blissful Fashion site")
@@ -313,6 +321,7 @@ The following features could be added to Blissful-fashion in the future. Project
 
 These were only some of project enhancements that could be done. Using other Django apps and other API-s, logic and creativity could make this project into something really wonderful.
 - a more detailed readme
+- set secret key
 
 
 ## **Already Implemented**
