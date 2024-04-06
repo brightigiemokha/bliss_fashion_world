@@ -78,14 +78,14 @@ SOCIALACCOUNT_PROVIDERS = {
         'AUTH_PARAMS': {'access_type': 'online'}
     },
           
-    # github login setup.
-    #'github': {
+    #github login setup.
+    # 'github': {
     #     'APP': {
     #         'client_id': os.environ.get('GITHUB_CLIENT_ID'),
     #         'secret': os.environ.get('GITHUB_SECRET_ID'),
     #         'key': ''
     #     },
-    #}
+    # }
 }
 
 MIDDLEWARE = [
