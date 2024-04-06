@@ -26,8 +26,8 @@ SECRET_KEY = '825#5-_y^72**b4@s+_v5zg686-(a#*mei1@5=%+t*voda3hpf'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True #'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['blissful-fashion-0cb729cb8dac.herokuapp.com', '8000-brightigiem-blissfashio-sg9e377qozu.ws-eu108.gitpod.io']
-CSRF_TRUSTED_ORIGINS = ['https://blissful-fashion-0cb729cb8dac.herokuapp.com', 'https://8000-brightigiem-blissfashio-sg9e377qozu.ws-eu108.gitpod.io']
+ALLOWED_HOSTS = ['blissful-fashion-0cb729cb8dac.herokuapp.com', '8000-brightigiem-blissfashio-0t9irrc7x5b.ws-eu110.gitpod.io']
+CSRF_TRUSTED_ORIGINS = ['https://blissful-fashion-0cb729cb8dac.herokuapp.com', 'https://8000-brightigiem-blissfashio-0t9irrc7x5b.ws-eu110.gitpod.io']
 SECURE_CROSS_ORIGIN_OPENER_POLICY='same-origin-allow-popups'
 
 # Application definition
@@ -66,7 +66,7 @@ SOCIALACCOUNT_PROVIDERS = {
             'profile',
             'email'
         ],
-        'AUTH_PARAMS': {'access_type': 'online'}
+        "AUTH_PARAMS": {"access_type": "online"}
     },
 
     # google login setup.
@@ -79,13 +79,13 @@ SOCIALACCOUNT_PROVIDERS = {
     },
           
     # github login setup.
-    'github': {
-        # 'APP': {
-        #     'client_id': os.environ.get('GITHUB_CLIENT_ID'),
-        #     'secret': os.environ.get('GITHUB_SECRET_ID'),
-        #     'key': ''
-        # },
-    }
+    #'github': {
+    #     'APP': {
+    #         'client_id': os.environ.get('GITHUB_CLIENT_ID'),
+    #         'secret': os.environ.get('GITHUB_SECRET_ID'),
+    #         'key': ''
+    #     },
+    #}
 }
 
 MIDDLEWARE = [
@@ -140,11 +140,11 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
-SITE_ID = 10
+SITE_ID = 12
 
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login/'
