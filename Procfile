@@ -1,1 +1,0 @@
-web:    gunicorn blissful_fashion.wsgi:application
