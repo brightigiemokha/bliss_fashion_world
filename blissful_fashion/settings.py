@@ -26,8 +26,8 @@ SECRET_KEY = '825#5-_y^72**b4@s+_v5zg686-(a#*mei1@5=%+t*voda3hpf'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True #'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['blissful-fashion-0cb729cb8dac.herokuapp.com', '8000-brightigiem-blissfashio-0t9irrc7x5b.ws-eu110.gitpod.io']
-CSRF_TRUSTED_ORIGINS = ['https://blissful-fashion-0cb729cb8dac.herokuapp.com', 'https://8000-brightigiem-blissfashio-0t9irrc7x5b.ws-eu110.gitpod.io']
+ALLOWED_HOSTS = ['blissful-fashion-0cb729cb8dac.herokuapp.com', '8000-brightigiem-blissfashio-0t9irrc7x5b.ws-eu110.gitpod.io', 'blissful-fashion-world.onrender.com']
+CSRF_TRUSTED_ORIGINS = ['https://blissful-fashion-0cb729cb8dac.herokuapp.com', 'https://8000-brightigiem-blissfashio-0t9irrc7x5b.ws-eu110.gitpod.io', 'https://blissful-fashion-world.onrender.com']
 SECURE_CROSS_ORIGIN_OPENER_POLICY='same-origin-allow-popups'
 
 
