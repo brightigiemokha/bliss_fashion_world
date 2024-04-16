@@ -146,10 +146,7 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
-if DEBUG:
-    SITE_ID = 12
-else:
-    SITE_ID = 1
+SITE_ID = 4
 
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
