@@ -24,10 +24,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '825#5-_y^72**b4@s+_v5zg686-(a#*mei1@5=%+t*voda3hpf'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False #'DEVELOPMENT' in os.environ
+DEBUG = True #'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['blissful-fashion-0cb729cb8dac.herokuapp.com', '8000-brightigiem-blissfashio-0t9irrc7x5b.ws-eu110.gitpod.io', 'blissful-fashion-world.onrender.com']
-CSRF_TRUSTED_ORIGINS = ['https://blissful-fashion-0cb729cb8dac.herokuapp.com', 'https://8000-brightigiem-blissfashio-0t9irrc7x5b.ws-eu110.gitpod.io', 'https://blissful-fashion-world.onrender.com']
+ALLOWED_HOSTS = ['blissful-fashion-0cb729cb8dac.herokuapp.com', '8000-brightigiem-blissfashio-642wjtc6xfy.ws-eu110.gitpod.io']
+CSRF_TRUSTED_ORIGINS = ['https://blissful-fashion-0cb729cb8dac.herokuapp.com', 'https://8000-brightigiem-blissfashio-642wjtc6xfy.ws-eu110.gitpod.io' ]
 SECURE_CROSS_ORIGIN_OPENER_POLICY='same-origin-allow-popups'
 
 
