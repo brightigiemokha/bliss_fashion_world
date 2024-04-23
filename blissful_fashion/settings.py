@@ -26,9 +26,10 @@ SECRET_KEY = '825#5-_y^72**b4@s+_v5zg686-(a#*mei1@5=%+t*voda3hpf'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False #'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['blissful-fashion-0cb729cb8dac.herokuapp.com', '8000-brightigiem-blissfashio-642wjtc6xfy.ws-eu108.gitpod.io']
-CSRF_TRUSTED_ORIGINS = ['https://blissful-fashion-0cb729cb8dac.herokuapp.com', 'https://8000-brightigiem-blissfashio-642wjtc6xfy.ws-eu108.gitpod.io']
+ALLOWED_HOSTS = ['blissful-fashion-0cb729cb8dac.herokuapp.com', '8000-brightigiem-blissfashio-0t9irrc7x5b.ws-eu110.gitpod.io', 'blissful-fashion-world.onrender.com']
+CSRF_TRUSTED_ORIGINS = ['https://blissful-fashion-0cb729cb8dac.herokuapp.com', 'https://8000-brightigiem-blissfashio-0t9irrc7x5b.ws-eu110.gitpod.io', 'https://blissful-fashion-world.onrender.com']
 SECURE_CROSS_ORIGIN_OPENER_POLICY='same-origin-allow-popups'
+
 
 # Application definition
 
@@ -66,7 +67,7 @@ SOCIALACCOUNT_PROVIDERS = {
             'profile',
             'email'
         ],
-        'AUTH_PARAMS': {'access_type': 'online'}
+        "AUTH_PARAMS": {"access_type": "online"}
     },
 
     # google login setup.
@@ -78,14 +79,14 @@ SOCIALACCOUNT_PROVIDERS = {
         'AUTH_PARAMS': {'access_type': 'online'}
     },
           
-    # github login setup.
-    'github': {
-        # 'APP': {
-        #     'client_id': os.environ.get('GITHUB_CLIENT_ID'),
-        #     'secret': os.environ.get('GITHUB_SECRET_ID'),
-        #     'key': ''
-        # },
-    }
+    #github login setup.
+    # 'github': {
+    #     'APP': {
+    #         'client_id': os.environ.get('GITHUB_CLIENT_ID'),
+    #         'secret': os.environ.get('GITHUB_SECRET_ID'),
+    #         'key': ''
+    #     },
+    # }
 }
 
 MIDDLEWARE = [
@@ -142,11 +143,9 @@ AUTHENTICATION_BACKENDS = [
 
 SITE_ID = 4
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login/'
@@ -250,6 +249,19 @@ STRIPE_CURRENCY = 'usd'
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
 STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
-DEFAULT_FROM_EMAIL = 'blissfulfashion@example.com'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
+
+# live email
+if 'DEVELOPMENT' in os.environ:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    DEFAULT_FROM_EMAIL = 'blissfulfashion@example.com'
+else:
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_USE_TLS = True
+    EMAIL_PORT = 587
+    EMAIL_HOST = 'smtp.gmail.com'
+    EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+    EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
+    DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')

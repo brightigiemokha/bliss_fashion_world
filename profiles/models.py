@@ -33,3 +33,25 @@ def create_or_update_user_profile(sender, instance, created, **kwargs):
         UserProfile.objects.create(user=instance)
     # Existing users: just save the profile
     instance.userprofile.save()
+
+
+class Contact(models.Model):
+    """
+    Lets user contact us
+    """
+    full_name = models.CharField(max_length=100)
+    email = models.EmailField()
+    message = models.TextField()
+
+    def __str__(self):
+        return self.full_name
+
+
+class MailList(models.Model):
+    """
+    user subscrib to news letter from store
+    """
+    email = models.EmailField()
+
+    def __str__(self):
+        return self.email

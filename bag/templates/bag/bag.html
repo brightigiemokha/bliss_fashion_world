@@ -64,7 +64,8 @@
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <button class="decrement-qty btn btn-sm btn-black rounded-0"
-                                                data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
+                                                aria-label="Name" data-item_id="{{ item.item_id }}"
+                                                id="decrement-qty_{{ item.item_id }}">
                                                 <span>
                                                     <i class="fas fa-minus fa-sm"></i>
                                                 </span>
@@ -75,7 +76,8 @@
                                             data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
                                         <div class="input-group-append">
                                             <button class="increment-qty btn btn-sm btn-black rounded-0"
-                                                data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
+                                                aria-label="Name" data-item_id="{{ item.item_id }}"
+                                                id="increment-qty_{{ item.item_id }}">
                                                 <span>
                                                     <i class="fas fa-plus fa-sm"></i>
                                                 </span>
@@ -105,20 +107,23 @@
                                 <input placeholder="Enter Coupon Code" type="text" name="code" id="">
                                 <button type="submit" class="btn btn-success">Apply</button>
                             </form>
-                            
+
                             {% if coupon != 0 %}
-                                <a href="{% url 'delete_coupon' %}" class="text-danger mt-3"> <i class="fas fa-trash"></i> Remove ${{coupon}} Coupon</a>
+                            <a href="{% url 'delete_coupon' %}" class="text-danger mt-3"> <i class="fas fa-trash"></i>
+                                Remove ${{coupon}} Coupon</a>
                             {% endif %}
-                                
+
                             <h4 class="mt-4"><strong>Grand Total: ${{ grand_total|floatformat:2 }}</strong></h4>
                             <p class="mb-1 text-success fw-bold">
-                                Get your order delivered tomorrow for an extra ${{next_day_delivery_amount}} 
-                                <input type="checkbox" {{next_day_delivery_status}} class="checkbox" name="" id="next_day_delivery_checkbox">
+                                Get your order delivered tomorrow for an extra ${{next_day_delivery_amount}}
+                                <input type="checkbox" {{next_day_delivery_status}} class="checkbox" name=""
+                                    id="next_day_delivery_checkbox">
                             </p>
                             {% if free_delivery_delta > 0 %}
                             <hr>
                             <p class="mb-1 text-danger">
-                                You could get free delivery by spending just <strong>${{ free_delivery_delta }}</strong>more!
+                                You could get free delivery by spending just
+                                <strong>${{ free_delivery_delta }}</strong>more!
                             </p>
                             {% endif %}
                         </td>
@@ -189,14 +194,14 @@
     $(document).ready(function () {
         // fxn to reload the page after chec box btn is clicked
         function reloadPage() {
-            location.reload(true);  // Reloads the page
+            location.reload(true); // Reloads the page
         }
 
         // Event hdl for checkbox click
         $('#next_day_delivery_checkbox').on('change', function () {
             if ($(this).is(':checked')) {
                 $.ajax({
-                    url: '/checkout/apply_next_day_delivery/',  
+                    url: '/checkout/apply_next_day_delivery/',
                     method: 'GET',
                     success: function (data) {
                         console.log('AJAX call successful');
@@ -206,8 +211,7 @@
                         console.error('AJAX call failed', error);
                     }
                 });
-            } else {
-            }
+            } else {}
         });
     });
 
@@ -218,7 +222,7 @@
     $(document).ready(function () {
         // Function to reload the page
         function reloadPage() {
-            location.reload(true);  // Reloads the page
+            location.reload(true); // Reloads the page
         }
 
         // Event handler for checkbox click
@@ -226,7 +230,7 @@
             if ($(this).is(':checked')) {
                 // Checkbox is checked, make an AJAX call to your Django view URL
                 $.ajax({
-                    url: '/checkout/apply_next_day_delivery/',  
+                    url: '/checkout/apply_next_day_delivery/',
                     method: 'GET',
                     success: function (data) {
                         // Handle success if needed
@@ -242,7 +246,7 @@
             } else {
                 // Checkbox is unchecked, make another AJAX call to the same Django view URL
                 $.ajax({
-                    url: '/checkout/delete_next_day_delivery/',  
+                    url: '/checkout/delete_next_day_delivery/',
                     method: 'GET',
                     success: function (data) {
                         // Handle success if needed
