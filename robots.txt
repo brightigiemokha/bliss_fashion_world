@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /bag/
+Sitemap: https://blissful-fashion-0cb729cb8dac.herokuapp.com/sitemap.xml
