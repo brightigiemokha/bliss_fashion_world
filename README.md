@@ -338,6 +338,26 @@ These were only some of project enhancements that could be done. Using other Dja
 [Back to top ⇧](#Blissful-Fashion)
 
 ---
+### <div id="manual_testing">Manual Testing</div>
+
+|  Test |  Result |   
+|---|---|
+| When the user clicks on Google icon they can register/login into a account. | Pass |
+| When the user clicks on Github icon they can register/login into a account. | Pass |
+| When the user chooses an item they can add them to chart. | Pass |
+| When the user add time to their basket they can check out securely. | Pass |
+| When the user add coupon they get discount from their purchase. | Pass |
+| When the User add next day delivery option cost is added to their purchase. | Pass |
+| The counter correctly adds the score after each move. | Pass |
+| When the user won 3 times, a window appears with the ability to move to the next level. | Pass |
+| When the computer won 3 times, a window appears with the ability to restart game. | Pass |
+| When moving to the next level, 1 more game icon is added.  | Pass |
+| If the user won 3 times on the 3rd level, then a popup window appears with congratulations.  | Pass |
+| The game logo at the header links to the main page from every page. | Pass |
+
+[Back to top ⇧](#Blissful-Fashion)
+
+---
 
 ## **Technologies Used**
 
