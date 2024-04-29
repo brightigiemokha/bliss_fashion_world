@@ -5,17 +5,7 @@ Visit the live site [Here.](https://blissful-fashion-0cb729cb8dac.herokuapp.com/
 
 ---
 
-## **Project Overview**
 
-# Blissful Fashion Store
-
-Blissful Fashion Store is an E-commerce site for shoppers who would love to go online and get items for their homes. the site is very secure with a secure payment system from stripe. this site offer users with great benefits and users are able to get their orders delivered to them on a next day delivery system all over Europe and UK.
-this is a easy to use site that have image of products and quantity needed can be selected by customer and placed in a basket until customer is done with shopping then can go to cart to see abd pay for item selected. 
-in the basket customers can chose to reduce the quantity of items they have previously selected and can also add to the quantity before making a payment. details of deliver address and names are require to complete the transactions.
-some of the benefits giving to customers are: 
-1. customers wouldn't be charged for delivery of times above the amount......
-2. there is a coupon offer for regular shopper / customers who have made a large order. such coupon are forworded to their email as a thank you gesture
-3. customers can login / register easily using their google or github accounts .
 ## CONTENTS
 
 * [Project Overview](#project-overview)
@@ -48,20 +38,19 @@ some of the benefits giving to customers are:
   * [Acknowledgments](#acknowledgments)
 
 ---
+## **Project Overview**
 
+# Blissful Fashion Store
+
+Blissful Fashion Store is an E-commerce site for shoppers who would love to go online and get items for their homes. the site is very secure with a secure payment system from stripe. this site offer users with great benefits and users are able to get their orders delivered to them on a next day delivery system all over Europe and UK.
+this is a easy to use site that have image of products and quantity needed can be selected by customer and placed in a basket until customer is done with shopping then can go to cart to see abd pay for item selected. 
+in the basket customers can chose to reduce the quantity of items they have previously selected and can also add to the quantity before making a payment. details of deliver address and names are require to complete the transactions.
+some of the benefits giving to customers are: 
+1. customers wouldn't be charged for delivery of times above the amount......
+2. there is a coupon offer for regular shopper / customers who have made a large order. such coupon are forworded to their email as a thank you gesture
+3. customers can login / register easily using their google or github accounts .
 
 ---
-
-
-
-# Error 
-- it is very important that i explain i have left the site Debug as true as i didnt have enough time to solve problem issues with Css after debug is set to development
-- code got broken at the time of submission and i was then too late to start all over again as there is no time left.
-- please see terminal issue with Debug
-![Terminal error for debug](media/debug_error.jpg)
-- Secret key also had issues when removed as site couldnt see the key in heroku. didnt have enough time to solve all this please
-![Secret Key](media/secret_key.jpg)
-
 
 - __front page view__
 
@@ -74,7 +63,7 @@ some of the benefits giving to customers are:
 
 
 
-  ![Front page](media/front_page.mp4)
+  ![Front page](media/front-page.jpg)
 ---
 
 ### **Project Goals**
@@ -99,6 +88,8 @@ some of the benefits giving to customers are:
  - Shopper can view individual products details, price , reviews/ratings and descriptions
  - Shopper can easily identify deals, clearance items and special offers so as to take advantage of special savings for products
  - Shopper can see their total spending on the Carts for items picked to avoid spending too much.
+ - Shopper can take advantage on the next day delivery options
+ - Shoppers can take advantage of the Coupon/voucher offers 
 
 ### **User Stories**
 
@@ -143,7 +134,7 @@ some of the benefits giving to customers are:
    - I want to be able to add / delete products in store
    - I want to delete user  
 
-[Back to top ⇧]
+[Back to top ⇧](#Blissful-Fashion)
 
 ---
 
