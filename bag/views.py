@@ -5,10 +5,12 @@ from products.models import Product
 
 # Create your views here.
 
+
 def view_bag(request):
     """ A view that renders the bag contents page """
 
     return render(request, 'bag/bag.html')
+
 
 def add_to_bag(request, item_id):
     """ Add a quantity of the specified product to the shopping bag """
@@ -42,7 +44,7 @@ def add_to_bag(request, item_id):
 
     request.session['bag'] = bag
     return redirect(redirect_url)
-    
+
 
 def adjust_bag(request, item_id):
     """Adjust the quantity of the specified product to the specified amount"""
@@ -89,7 +91,7 @@ def remove_from_bag(request, item_id):
             del bag[item_id]['items_by_size'][size]
             if "coupon" in request.session:
                 request.session["coupon"] = 0
-            
+
             if "next_day_delivery_status" in request.session and "next_day_delivery_amount" in request.session:
                 request.session["next_day_delivery_amount"] = 0
                 request.session["next_day_delivery_status"] = 'unchecked'

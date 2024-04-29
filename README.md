@@ -1,5 +1,21 @@
 
+![Responsive website image](media/responsive_design.jpg)
 
+Visit the live site [Here.](https://blissful-fashion-0cb729cb8dac.herokuapp.com/ "Link to Blissful Fashion site")
+
+---
+
+## **Project Overview**
+
+# Blissful Fashion Store
+
+Blissful Fashion Store is an E-commerce site for shoppers who would love to go online and get items for their homes. the site is very secure with a secure payment system from stripe. this site offer users with great benefits and users are able to get their orders delivered to them on a next day delivery system all over Europe and UK.
+this is a easy to use site that have image of products and quantity needed can be selected by customer and placed in a basket until customer is done with shopping then can go to cart to see abd pay for item selected. 
+in the basket customers can chose to reduce the quantity of items they have previously selected and can also add to the quantity before making a payment. details of deliver address and names are require to complete the transactions.
+some of the benefits giving to customers are: 
+1. customers wouldn't be charged for delivery of times above the amount......
+2. there is a coupon offer for regular shopper / customers who have made a large order. such coupon are forworded to their email as a thank you gesture
+3. customers can login / register easily using their google or github accounts .
 ## CONTENTS
 
 * [Project Overview](#project-overview)
@@ -35,17 +51,7 @@
 
 
 ---
-## **Project Overview**
 
-# Blissful Fashion Store
-
-Blissful Fashion Store is an E-commerce site for shoppers who would love to go online and get items for their homes. the site is very secure with a secure payment system from stripe. this site offer users with great benefits and users are able to get their orders delivered to them on a next day delivery system all over Europe and UK.
-this is a easy to use site that have image of products and quantity needed can be selected by customer and placed in a basket until customer is done with shopping then can go to cart to see abd pay for item selected. 
-in the basket customers can chose to reduce the quantity of items they have previously selected and can also add to the quantity before making a payment. details of deliver address and names are require to complete the transactions.
-some of the benefits giving to customers are: 
-1. customers wouldn't be charged for delivery of times above the amount......
-2. there is a coupon offer for regular shopper / customers who have made a large order. such coupon are forworded to their email as a thank you gesture
-3. customers can login / register easily using their google or github accounts .
 
 
 # Error 
@@ -56,11 +62,7 @@ some of the benefits giving to customers are:
 - Secret key also had issues when removed as site couldnt see the key in heroku. didnt have enough time to solve all this please
 ![Secret Key](media/secret_key.jpg)
 
-![Responsive website image](media/responsive_design.jpg)
 
-Visit the live site [Here.](https://blissful-fashion-0cb729cb8dac.herokuapp.com/ "Link to Blissful Fashion site")
-
----
 - __front page view__
 
   - this is the main / front page of the site . it welcomes choppers to the site with information of sales available to them. here a shopper can decide to go shopping by clicking on the shop now to open the door to an amazing world of items for shopping.
