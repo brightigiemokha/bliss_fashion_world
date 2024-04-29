@@ -504,23 +504,23 @@ The [HTML W3C HTML Validator](https://validator.w3.org/#validate_by_uri+with_opt
 
 ### **W3C CSS Validator**
 
-The [CSS Jigsaw CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_uri) was used to validate the CSS code used, showing no errors on the customized style.css, uploaded by direct input.
+The [CSS Jigsaw CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_uri) was used to validate the CSS code used, showing 1 error and 786 warnings. no change was done to this, As that's a 3rd party service (font-awesome) there's nothing that you can do about that particular error.
 
  - CSS validation
  <br>
 
- ![CSS Validation](media/W3C_css_validator.jpg)
+ ![CSS Validation](media/w3-css.png)
 
 ### **JSHINT Javascript Validator**
 
-The [JsHint](https://jshint.com/) was used to validate the Javascript code used, showing no errors.
+The [JsHint](https://jshint.com/) was used to validate the Javascript code used, showing no errors, but just 2 warnings which i couldn't do anything about as this was not an issue i could solve.
 
  - Javascript validation
  <br>
 
- ![Javascript validation](media/login_js.jpg)
- ![Javascript validation](media/signup_js.jpg)
- ![Javascript validation](media/product_js.jpg)
+ ![Javascript validation](media/w3-js.png)
+ ![Javascript validation](media/w3-js2.png)
+
 
 ### **CI Python Linter**
 

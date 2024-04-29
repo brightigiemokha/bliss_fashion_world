@@ -3,6 +3,7 @@ from django.conf import settings
 from django.shortcuts import get_object_or_404
 from products.models import Product
 
+
 def bag_contents(request):
 
     bag_items = []
@@ -39,7 +40,7 @@ def bag_contents(request):
     else:
         delivery = 0
         free_delivery_delta = 0
-    
+
     if "coupon" in request.session:
         coupon = request.session.get("coupon")
         initial_total = delivery + total
@@ -59,7 +60,6 @@ def bag_contents(request):
         next_day_delivery_amount = 0
         grand_total = delivery + total
 
-    
     context = {
         'bag_items': bag_items,
         'total': total,
@@ -68,9 +68,9 @@ def bag_contents(request):
         'free_delivery_delta': free_delivery_delta,
         'free_delivery_threshold': settings.FREE_DELIVERY_THRESHOLD,
         'grand_total': grand_total - coupon,
-        'coupon':coupon,
-        'next_day_delivery_amount': next_day_delivery_amount_constant, # note: make this data dynamic, maybe calculate the next day delivery amount based on percentage and the number of items in cart 
-        'next_day_delivery_status':next_day_delivery_status,
+        'coupon': coupon,
+        'next_day_delivery_amount': next_day_delivery_amount_constant,
+        'next_day_delivery_status': next_day_delivery_status,
     }
 
     return context
