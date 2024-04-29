@@ -24,11 +24,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.getenv('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False #'DEVELOPMENT' in os.environ
+DEBUG = False  # 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = ['blissful-fashion-0cb729cb8dac.herokuapp.com', '8000-brightigiem-blissfashio-642wjtc6xfy.ws-eu110.gitpod.io']
-CSRF_TRUSTED_ORIGINS = ['https://blissful-fashion-0cb729cb8dac.herokuapp.com', 'https://8000-brightigiem-blissfashio-642wjtc6xfy.ws-eu110.gitpod.io' ]
-SECURE_CROSS_ORIGIN_OPENER_POLICY='same-origin-allow-popups'
+CSRF_TRUSTED_ORIGINS = ['https://blissful-fashion-0cb729cb8dac.herokuapp.com', 'https://8000-brightigiem-blissfashio-642wjtc6xfy.ws-eu110.gitpod.io']
+SECURE_CROSS_ORIGIN_OPENER_POLICY = 'same-origin-allow-popups'
 
 
 # Application definition
@@ -44,15 +44,15 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'allauth.socialaccount.providers.google', # For google
-    'allauth.socialaccount.providers.facebook', # For facebook
-    'allauth.socialaccount.providers.github', # For github
+    'allauth.socialaccount.providers.google',  # For google
+    'allauth.socialaccount.providers.facebook',  # For facebook
+    'allauth.socialaccount.providers.github',  # For github
     'home',
     'products',
     'bag',
     'checkout',
     'profiles',
-    
+
     # Other
     'crispy_forms',
     'crispy_bootstrap5',
@@ -78,8 +78,8 @@ SOCIALACCOUNT_PROVIDERS = {
         ],
         'AUTH_PARAMS': {'access_type': 'online'}
     },
-          
-    #github login setup.
+ 
+    # github login setup.
     # 'github': {
     #     'APP': {
     #         'client_id': os.environ.get('GITHUB_CLIENT_ID'),
@@ -117,7 +117,7 @@ TEMPLATES = [
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
-                'django.template.context_processors.request', # required by allauth
+                'django.template.context_processors.request',  # required by allauth
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
@@ -219,7 +219,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 if 'USE_AWS' in os.environ:
-    #Cache control
+    # Cache control
     AWS_S3_OBJECT_PARAMETERS = {
         'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
         'CacheControl': 'max-age=94608000',
@@ -237,7 +237,7 @@ if 'USE_AWS' in os.environ:
     DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
     MEDIAFILES_LOCATION = 'media'
 
-    #override static and media URLs in production
+    # override static and media URLs in production
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
 

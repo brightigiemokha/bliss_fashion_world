@@ -184,7 +184,7 @@ the colors used are very warm and visable colors. user friendly
   - __Special Offers Page__
 
   - Special Offers Page displays items on offers , these are discounted products due to age or seasons but till at good qualitys
-
+![Special offer page](media/spe)
 
 
 - __Hardware Page__

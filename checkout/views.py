@@ -15,6 +15,7 @@ from bag.contexts import bag_contents
 import stripe
 import json
 
+
 @require_POST
 def cache_checkout_data(request):
     try:
@@ -162,6 +163,7 @@ def delete_coupon(request):
 
     return redirect(reverse('view_bag'))
 
+
 @csrf_exempt
 def apply_next_day_delivery(request):
     current_bag = bag_contents(request)
@@ -171,6 +173,7 @@ def apply_next_day_delivery(request):
     request.session.save()
     messages.success(request, 'Next day delivery applied')
     return redirect(reverse('view_bag'))
+
 
 def delete_next_day_delivery(request):
     request.session["next_day_delivery_amount"] = 0
@@ -202,11 +205,11 @@ def checkout_success(request, order_number):
 
     order.grand_total -= coupon
     order.grand_total -= next_day_delivery_amount
-    order.save() 
+    order.save()
 
     if "coupon" in request.session:
         request.session["coupon"] = 0
-    
+
     if "next_day_delivery_status" in request.session and "next_day_delivery_amount" in request.session:
         request.session["next_day_delivery_amount"] = 0
         request.session["next_day_delivery_status"] = 'unchecked'
