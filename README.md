@@ -556,27 +556,23 @@ The [LightHouse](https://developer.chrome.com/docs/lighthouse/overview/) was use
  - Login
  <br>
 
- ![Login](media/light_house_desktop_signin.jpg)
+ ![Login](media/lighthouse-login-desktop.png)
 
  - SignOut
  <br>
 
- ![Signup](media/light_house_desktop_signup.jpg)
+ ![Signup](media/lighthouse-signup-desktop.png)
 
- - Product
+ - Index
  <br>
 
- ![Product page](media/light_house_desktop_product.jpg)
+ ![Index page](media/lighthouse_desktop.png)
 
  - Contact Us
  <br>
 
  ![contact us](media/light_house_desktop_contact.jpg)
 
- - Bag
- <br>
-
- ![Bag](media/light_house_desktop_bag.jpg)
 
 #### **Mobile**
 
@@ -586,27 +582,22 @@ The [LightHouse](https://developer.chrome.com/docs/lighthouse/overview/) was use
  - Login
  <br>
 
- ![Login](media/light_house_mobile_signin.jpg)
+ ![Login](media/lighthouse-login-mobile.png)
 
  - SignOut
  <br>
 
- ![Signup](media/light_house_mobile_signup.jpg)
+ ![Signup](media/lighthouse-signup-mobile.png)
 
- - Product
+ - Index
  <br>
 
- ![Product page](media/light_house_mobile_product.jpg)
+ ![Index page](media/lighthouse_mobile.png)
 
  - Contact Us
  <br>
 
  ![contact us](media/light_house_mobile_contact.jpg)
-
- - Delete Report
- <br>
-
- ![Bag](media/light_house_mobile_bag.jpg)
 
 [Back to top ⇧]
 
