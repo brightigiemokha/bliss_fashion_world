@@ -317,7 +317,7 @@ The following features could be added to Blissful-fashion in the future. Project
 
 These were only some of project enhancements that could be done. Using other Django apps and other API-s, logic and creativity could make this project into something really wonderful.
 - a more detailed readme
-- set secret key
+- SEO mechanism implemented.
 
 
 ## **Already Implemented**
