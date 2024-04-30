@@ -187,7 +187,7 @@ the colors used are very warm and visable colors. user friendly
   - __Special Offers Page__
 
   - Special Offers Page displays items on offers , these are discounted products due to age or seasons but till at good qualitys
-![Special offer page](media/special-offers)
+![Special offer page](media/special-offers.png)
 
 
 - __Hardware Page__
@@ -469,33 +469,33 @@ to INSTALLED_APPS in settings.py add:
 
 ### **W3C HTML Validator**
 
-The [HTML W3C HTML Validator](https://validator.w3.org/#validate_by_uri+with_options) was used to validate the HTML code used, showing no errors except on single report page, 'strike' element is obsolete. As this is a feature (text censoring from admin site) and works as intended, the error is disregarded.
-- at the last minute to my submitting this project i have discoverred some broken links due to my testing and adjusting site. i have now under most of the changes just to cause the site to run well and project submitted due to the last minute. there changes includ the extra spaces for all python codes.
+The [HTML W3C HTML Validator](https://validator.w3.org/#validate_by_uri+with_options) was used to validate the HTML code used, showing two error relating to the use of Marquee, this error could not be solved at this time due to time factor, other warnings where due to the presence of Javascripts on the pages. the live link was used for this test.
  
  <br>
 
- ![Login](media/Login_validator_desktop.jpg)
+ ![Login](media/w3-login.png)
 
  - SignUp
  <br>
 
- ![Signup](media/signup_validator.jpg)
+ ![Products](media/w3-register.png)
 
 
  - Index page
  <br>
 
- ![Index Task](media/index_validate.jpg)
+ ![Index Task](media/w3html.png)
 
  - product page
  <br>
 
- ![Product Task](media/product_validator.jpg)
+ ![Product Task](media/w3-html-products.png)
 
 
 ### **W3C CSS Validator**
 
 The [CSS Jigsaw CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_uri) was used to validate the CSS code used, showing 1 error and 786 warnings. no change was done to this, As that's a 3rd party service (font-awesome) there's nothing that you can do about that particular error.
+- live link was used for this test as well.
 
  - CSS validation
  <br>
@@ -619,11 +619,6 @@ The [W.A.V.E.](https://wave.webaim.org/) was used to test for accessibility, sho
 
  - Index
  <br>
-
-
- - Login
- <br>
-
  ![wave](media/wave.jpg)
 
 
