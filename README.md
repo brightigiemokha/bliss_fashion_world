@@ -133,6 +133,7 @@ some of the benefits giving to customers are:
    - I want to create Coupon for users
    - I want to be able to add / delete products in store
    - I want to delete user  
+   - I want to add products / delete products for sale
 
 [Back to top ⇧](#Blissful-Fashion)
 
@@ -154,22 +155,24 @@ the colors used are very warm and visable colors. user friendly
 
     - This page welcome users to the amazing world of shopping with Blissful Fashion, it has navigation links for products and 
     -  base template is created with head, navigation and footer being the same on signup and login pages, adding specific page content to it.
-    - User can enter the home page using 'Enter' button presented at the middle of intro page, or use navigation link at the top of the page.
-    - User can open home page (signup) with more detailed info about the Task Todo App. 
+    - User can enter the home page using 'SHOP NOW' button presented at the middle of intro page, or use navigation link at the top of the page.
+    - User can open home page (signup) with more detailed info about the Blissful Fashion. 
+    - User can also get autenticated using Social accounts like Google / Github.
     
 
   - *Registerig, logging in/out:*  
     - While users can still shop on this site without registering, the site dues support users who will like to have a profile account so as to have / see the order details and historys. On the right top corner of the page users are able to register or login to their profile. Blissful Fashion has made this easier by creating a link for users to login / register using their social accounts like Github or Google. confirmation email is sent to the email of first time user to verify their identity after which an account is created and user can the control and maintain their profile.
 
-    - first time users who choose to use social media account for registration are redirected tio the social media account for Authorisation,
+    - first time users who choose to use social media account for registration are redirected to the social media account for Authorisation,
     - New user get a message after successful registration, "Congratulations, You are now Registered".
     
     - Upon registering, the 'Register' link is replaced by 'Logout' link, allowing the user to sign out from the site.
-    - Logged in users will see their username and a greeting displayed in the top left corner, in the style of 'Hello: "username"'.
-    - The user can now open the 'Task' and 'create Task' pages.
-    - When logging in the user is brought to the Task Todo page .
+    - Logged in users will see their profile and can edit it in the top right corner.
+    - The user can view items for sale.
+    - The user can add item to basket.
+    - The user can leave a review.
     - When logging out, the user is asked 'Are you sure' before signing out.
-    - When signed out, the user is brought to the index/Signup page.
+    - When signed out, the user is brought to the index.
 
 - __Products Page__
 
@@ -184,7 +187,7 @@ the colors used are very warm and visable colors. user friendly
   - __Special Offers Page__
 
   - Special Offers Page displays items on offers , these are discounted products due to age or seasons but till at good qualitys
-![Special offer page](media/spe)
+![Special offer page](media/special-offers)
 
 
 - __Hardware Page__
@@ -341,12 +344,9 @@ These were only some of project enhancements that could be done. Using other Dja
 | When the user add time to their basket they can check out securely. | Pass |
 | When the user add coupon they get discount from their purchase. | Pass |
 | When the User add next day delivery option cost is added to their purchase. | Pass |
-| The counter correctly adds the score after each move. | Pass |
-| When the user won 3 times, a window appears with the ability to move to the next level. | Pass |
-| When the computer won 3 times, a window appears with the ability to restart game. | Pass |
-| When moving to the next level, 1 more game icon is added.  | Pass |
-| If the user won 3 times on the 3rd level, then a popup window appears with congratulations.  | Pass |
-| The game logo at the header links to the main page from every page. | Pass |
+| when the User add reviews to products , reviews are saved | Pass |
+| When the user fill the contact us form they get a feedback to confirm message sent | Pass |
+| When the user subcribe for the monthly news letter they get confirmation back | Pass |
 
 [Back to top ⇧](#Blissful-Fashion)
 
@@ -471,8 +471,6 @@ to INSTALLED_APPS in settings.py add:
 
 The [HTML W3C HTML Validator](https://validator.w3.org/#validate_by_uri+with_options) was used to validate the HTML code used, showing no errors except on single report page, 'strike' element is obsolete. As this is a feature (text censoring from admin site) and works as intended, the error is disregarded.
 - at the last minute to my submitting this project i have discoverred some broken links due to my testing and adjusting site. i have now under most of the changes just to cause the site to run well and project submitted due to the last minute. there changes includ the extra spaces for all python codes.
-
-
  
  <br>
 
@@ -518,6 +516,7 @@ The [JsHint](https://jshint.com/) was used to validate the Javascript code used,
 ### **CI Python Linter**
 
 The [CI Python Linter](https://pep8ci.herokuapp.com/) was used to validate the Python code used, showing no errors except for 'line too long'. there was no time to break all of the long code as i was also worried about breaking my code. This could not be resolved despite best efforts due to short time.
+- I also installed RUFF just to try to fix the long line issues but because i have not used it before and didnt want to exceed my deadline i have not implimented this in the code so as not to cause any errors at this final stage.
 
  - admin.py
  <br>
